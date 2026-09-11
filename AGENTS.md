@@ -22,7 +22,11 @@ reviewed catalog data, and stable public JSON contracts.
 - Keep English and Chinese website output generated from the same canonical
   resource data. Do not hand-copy catalog content into website source files.
 - Keep paired English and Chinese first-party guides aligned in scope, version,
-  review date, and factual meaning.
+  review date, and factual meaning. All content (guides, playbooks, examples,
+  courses, radar entries) ships EN+ZH in the same change.
+- Governance documents (`AGENTS.md`, `CONTRIBUTING.md`, `docs/CONSUMING.md`,
+  `docs/CURATION_POLICY.md`, `docs/REPO_TO_WEBSITE.md`, plans) are
+  English-canonical; a `_cn` companion may exist but the English text governs.
 - Add first-party guides and playbooks to `content-manifest.json`; keep each
   locale pair aligned and verify its source checksum.
 - Treat HTTP 403, 429, and transient 5xx responses as review-needed states, not

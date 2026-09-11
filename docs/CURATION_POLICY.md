@@ -6,10 +6,14 @@ resource proposals and catalog pull requests.
 
 ## Scope
 
-FlyPython catalogs durable resources for Python learning and Python-based AI
-agent development. The catalog favors material that helps readers build skills
-or use a maintained tool safely. It is not a general link directory, product
-launch feed, website renderer, or hosting location for unrelated applications.
+FlyPython catalogs durable resources for working with Python in the AI-coding
+era: building, verifying, and delivering Python projects — including
+Python-based AI agent development. It also hosts first-party courses
+(`courses/`, agent-taught folders with objective verification) and Project
+Radar entries (`catalog/projects/`, reviewed current projects with lifecycle
+status). The catalog favors material that helps readers build skills or use a
+maintained tool safely. It is not a general link directory, product launch
+feed, website renderer, or hosting location for unrelated applications.
 
 This repository is the canonical data and review layer. The separate
 flypython.com repository owns the public website, learning guides, task
@@ -68,9 +72,17 @@ Allowed classifications are:
 | `source_type` | `official-docs`, `official-standard`, `official-project` |
 | `level` | `beginner`, `intermediate`, `advanced`, `all-levels` |
 | `language` | `en`, `zh`, `multilingual` |
-| `status` | `active` |
+| `status` | `active` (resources); radar projects additionally use `new`, `rising`, `stable`, `major-update`, `experimental`, `archived`; courses may use `deprecated` after a tool major-version break |
 | `risk` | `low`, `medium` |
 | `requires_key`, `featured` | Boolean |
+
+Radar project records additionally carry `ai_familiarity`
+(`low`/`medium`/`high`): whether the project and its current API are covered
+by mainstream model training data. Grade `low` when the project or its current
+major version postdates common model cutoffs, `medium` when it is known but
+frequently generated with outdated APIs, `high` when models reliably produce
+current-API code. The grade reflects the maintainer's dated judgment, not a
+benchmark result.
 
 IDs must be stable, lowercase, and unique. A rename needs an explicit migration
 plan because website consumers and downstream data may depend on the old ID.
@@ -134,10 +146,11 @@ stable ID.
 
 ## Permissions and attribution
 
-This repository currently does not grant a general license to reuse its content
-or code. Public visibility is not permission to copy, redistribute, or relicense
-repository material. Contributors must submit only material they have the right
-to submit and must preserve required notices.
+This repository is dual-licensed (see `LICENSE`): code, examples, verification
+scripts, and templates under MIT; written content (guides, playbooks, course
+lessons, catalog records, documentation prose) under CC BY 4.0 with attribution
+to "FlyPython (flypython.com)". Contributors must submit only material they
+have the right to submit and must preserve required notices.
 
 Third-party content keeps its original terms. A catalog entry may link to and
 factually describe a third-party resource, but it must not copy or relicense that
