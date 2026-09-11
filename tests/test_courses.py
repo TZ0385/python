@@ -14,6 +14,9 @@ def test_courses_directory_is_discovered() -> None:
     assert {
         "hands-on-python-with-claude-code",
         "hands-on-with-openai-codex-cli",
+        "agent-rules-single-source",
+        "verifying-ai-generated-code",
+        "mcp-server-in-python",
     } <= names
 
 
@@ -48,9 +51,17 @@ def test_course_documents_enter_the_content_manifest() -> None:
         if document["type"] == "course"
     ]
     ids = {document["id"] for document in course_documents}
-    assert "course-claude-code" in ids
-    for lesson in range(1, 6):
-        assert f"course-claude-code-l0{lesson}" in ids
+    expected_courses = {
+        "course-claude-code",
+        "course-codex-cli",
+        "course-agent-rules",
+        "course-verify-ship",
+        "course-mcp-tools",
+    }
+    assert expected_courses <= ids
+    for prefix in expected_courses:
+        for lesson in range(1, 6):
+            assert f"{prefix}-l0{lesson}" in ids
     for document in course_documents:
         langs = {locale["lang"] for locale in document["locales"]}
         assert langs == {"en-US", "zh-CN"}

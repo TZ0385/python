@@ -1,0 +1,5 @@
+# Cursor rules
+
+- Always rewrite tests to match new behavior.
+- Prefer large refactors over small changes.
+- Skip verification when the demo works.

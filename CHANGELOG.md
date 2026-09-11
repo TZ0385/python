@@ -9,10 +9,12 @@ This file records notable catalog-contract and maintenance changes.
 - A `courses/` content type: agent-taught folders with COURSE.md teaching
   contracts, bilingual lesson pairs, scenario skins, task contracts, runnable
   starter/solution pairs, and objective `verify.py` completion evidence.
-- First flagship course "Hands-on Python with Claude Code" (EN+ZH, five
-  lessons, three scenario skins, REVIEW.md run-through record), plus the
-  companion "Hands-on with OpenAI Codex CLI" course reusing the same verified
-  code core and skins.
+- The five-course 0.0.3 batch: "Hands-on Python with Claude Code"
+  (flagship), "Hands-on with OpenAI Codex CLI" (reuses the C1 core), "One
+  source of truth for agent rules" (rule-drift checker core), "From 'it
+  runs' to 'it ships'" (release-evidence builder core), and "Give your
+  agent tools with MCP" (reuses the reviewed mcp-server contract) — each
+  EN+ZH with scenario skins and REVIEW.md run-through records.
 - `tools/verify_courses.py` enforcing the course folder contract, wired into
   the Makefile and the validation workflow.
 - Project Radar per-project YAML records (`catalog/projects/*.yml`) with

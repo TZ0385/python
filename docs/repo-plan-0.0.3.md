@@ -67,8 +67,9 @@ First batch (assembled, not rewritten): C1 Claude Code × Python hands-on
 (flagship, 3 scenario skins: Excel/report automation, data monitor, small API
 tool) — **live 2026-09-12**; C2 Codex CLI — **live 2026-09-12** (reuses the C1
 code core and skins per the reuse rule); C3 AGENTS.md single-source, C4
-verify-and-ship, C5 MCP server remain the next batch (see §8). See the site
-plan §2.2.
+verify-and-ship, and C5 MCP server — **all live 2026-09-12** (C3/C4 ship new
+stdlib cores — a rule-drift checker and a release-evidence builder; C5 reuses
+the reviewed `examples/mcp-server` contract). See the site plan §2.2.
 
 ## 3. Project Radar data model
 

@@ -1,0 +1,4 @@
+{
+  "command": ["-m", "unittest", "discover", "-s", "tests"],
+  "unverified": ["the failing expectation is the regression under study"]
+}

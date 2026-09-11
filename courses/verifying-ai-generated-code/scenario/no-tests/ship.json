@@ -1,0 +1,4 @@
+{
+  "command": ["-m", "unittest", "discover", "-s", "tests"],
+  "unverified": ["everything — this project has no tests yet"]
+}
