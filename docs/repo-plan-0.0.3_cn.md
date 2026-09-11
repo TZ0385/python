@@ -155,6 +155,10 @@ risk: "…"
   `/from-github` 验证为前置。
 - [ ] FP-344 双许可 LICENSE 就位（MIT 代码 / CC BY 4.0 内容，两仓库同）——
   课程文件夹分发与 FP-326 的前置。
+- [ ] FP-350 校验器与 schema 追上政策：`validate_catalog.py` 与
+  `catalog-v1`/`radar-v1` 支持 Radar 生命周期状态与 `ai_familiarity`；
+  manifest schema 增加 `type: "course"`；首个 Release（FP-334）时把
+  CHANGELOG `[Unreleased]` 切入 `0.1.0` 段。
 
 ## 9. 非目标与风险
 

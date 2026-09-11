@@ -176,6 +176,10 @@ risk: "…"
   verified `/from-github` route.
 - [ ] FP-344 Dual LICENSE in place (MIT code / CC BY 4.0 content) in both
   repositories — prerequisite for course-folder distribution and FP-326.
+- [ ] FP-350 Validators and schemas catch up to policy: `validate_catalog.py`
+  + `catalog-v1`/`radar-v1` support radar lifecycle statuses and
+  `ai_familiarity`; manifest schema gains `type: "course"`; CHANGELOG
+  `[Unreleased]` cut into a `0.1.0` section at the first Release (FP-334).
 
 ## 9. Non-goals and risks
 
