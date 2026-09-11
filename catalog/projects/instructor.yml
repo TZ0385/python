@@ -1,6 +1,6 @@
 id: instructor
-repo: jxnl/instructor
-url: https://github.com/jxnl/instructor
+repo: 567-labs/instructor  # repository moved from jxnl/instructor; same project
+url: https://github.com/567-labs/instructor
 category: ai-tools
 status: stable
 first_seen: 2026-09-02
