@@ -186,6 +186,144 @@
       ]
     },
     {
+      "id": "course-codex-cli",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-openai-codex-cli/COURSE.md",
+          "title": "Hands-on with OpenAI Codex CLI",
+          "summary": "The same verified Python workflow as the Claude Code course — task contract, bounded change, objective verify.py evidence — taught hands-on with the OpenAI Codex CLI instead.",
+          "sha256": "aa223ff4356ab25c32f55344362a5133fcba0f25851e05c6bd3c6bde9189a8aa"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-openai-codex-cli/COURSE_cn.md",
+          "title": "OpenAI Codex CLI 实战",
+          "summary": "与 Claude Code 课程相同的已验证 Python 工作流——任务契约、最小变更、客观 verify.py 证据——改用 OpenAI Codex CLI 完成实战。",
+          "sha256": "4a31ae97c205ee1e28008f1149aadf1488d4d305176678da1c475475174944d5"
+        }
+      ]
+    },
+    {
+      "id": "course-codex-cli-l01",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L01.md",
+          "title": "Lesson 1: Reproduce the failure with Codex in the loop",
+          "summary": "Run the verifier both ways, map each failing test to a real-world failure class, and learn how to hand the folder to Codex.",
+          "sha256": "794fc25625913718bdca8bf4ad71d5528d8a05b818e677002988b155087a9332"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L01_cn.md",
+          "title": "第 1 课：让 Codex 进环，先复现故障",
+          "summary": "双向运行验证器，把每个失败测试对应到真实故障，并学会如何把文件夹交给 Codex。",
+          "sha256": "03b91470fcf864bbf80dc4846f7b8cb1673a47623158af776698df1cf980e76f"
+        }
+      ]
+    },
+    {
+      "id": "course-codex-cli-l02",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L02.md",
+          "title": "Lesson 2: Write the task contract before the change",
+          "summary": "Turn \"make it better\" into bounded, testable statements — the single highest-leverage skill for driving Codex.",
+          "sha256": "61411a5da9baa192923d38c2db052380663179b0c2246196ae2d0cea0a70e10f"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L02_cn.md",
+          "title": "第 2 课：动手之前先写任务契约",
+          "summary": "把“优化一下”变成有边界、可测试的陈述——驱动 Codex 杠杆最大的一项技能。",
+          "sha256": "92f68d255ed3a6f68a1c3357772467e1e26dfbc75664eb88b35d7d8ca13752a6"
+        }
+      ]
+    },
+    {
+      "id": "course-codex-cli-l03",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L03.md",
+          "title": "Lesson 3: Drive a bounded change, test by test",
+          "summary": "Supervise Codex through seven small diffs — smallest change, no new dependencies, one failing test group at a time.",
+          "sha256": "50bf8c5bab11827612da38a6ff2aa56011a6db119504d8a1fe2a1ee5fc2e82b1"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L03_cn.md",
+          "title": "第 3 课：按测试驱动一次有边界的变更",
+          "summary": "监督 Codex 完成七个小 diff——最小变更、不新增依赖、一次一组失败测试。",
+          "sha256": "e71a0c9f87a5f8e7f04afcbeddc89fb135f4bfb3887dcd3eb0fb1f5d4132c831"
+        }
+      ]
+    },
+    {
+      "id": "course-codex-cli-l04",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L04.md",
+          "title": "Lesson 4: Verify like an engineer, review like a skeptic",
+          "summary": "Complete the evidence loop — both verification directions, all three skins, a scope-creep diff review, and a written record of what is not proven.",
+          "sha256": "a300024f50ac832903ea4336268f53973cfec1b3192f5739e9d140f68a8bbd51"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L04_cn.md",
+          "title": "第 4 课：像工程师一样验证，像怀疑者一样审查",
+          "summary": "完成证据闭环——双向验证、三个皮肤、范围蔓延 diff 审查，以及一份写明未证明内容的记录。",
+          "sha256": "43aef97d44143ac7f95ecaa63c7027fd1b63096c6def6d19bc62f59a6642d223"
+        }
+      ]
+    },
+    {
+      "id": "course-codex-cli-l05",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L05.md",
+          "title": "Lesson 5: Apply this to your own project",
+          "summary": "Port the workflow — not the code — to one script you own, with tests, a verify command, and honest limits.",
+          "sha256": "f70eae4fb1e1c367fe95001a89d77aa32e2c58470c26c2571777773e3189611e"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L05_cn.md",
+          "title": "第 5 课：把这套方法带回你自己的项目",
+          "summary": "迁移工作流——而不是代码——到你拥有的一个脚本上，附测试、验证命令与诚实的局限说明。",
+          "sha256": "2357b697ae279590bfb4ab268fb241918ce2075ffe7c704bcf6975a39b6b9725"
+        }
+      ]
+    },
+    {
       "id": "example-async-fetcher",
       "type": "example",
       "content_version": 1,

@@ -10,7 +10,9 @@ This file records notable catalog-contract and maintenance changes.
   contracts, bilingual lesson pairs, scenario skins, task contracts, runnable
   starter/solution pairs, and objective `verify.py` completion evidence.
 - First flagship course "Hands-on Python with Claude Code" (EN+ZH, five
-  lessons, three scenario skins, REVIEW.md run-through record).
+  lessons, three scenario skins, REVIEW.md run-through record), plus the
+  companion "Hands-on with OpenAI Codex CLI" course reusing the same verified
+  code core and skins.
 - `tools/verify_courses.py` enforcing the course folder contract, wired into
   the Makefile and the validation workflow.
 - Project Radar per-project YAML records (`catalog/projects/*.yml`) with

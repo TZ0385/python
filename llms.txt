@@ -19,6 +19,7 @@
 - `catalog/projects/`: One reviewed YAML file per Project Radar entry, plus the discovery queue `candidates.json`.
 - `courses/`: Agent-taught course folders; download one and say "start lesson 1":
   - `courses/hands-on-python-with-claude-code/`: Task contract, bounded change, and objective verify.py evidence with Claude Code (EN+ZH lessons, three scenario skins).
+  - `courses/hands-on-with-openai-codex-cli/`: The same verified workflow taught with the OpenAI Codex CLI (EN+ZH lessons, reuses the flagship scenario skins).
 - `examples/`: Reproducible test projects with failing starters and verified solutions:
   - `examples/product-slug/`: String normalization edge cases and regex safety.
   - `examples/pydantic-validation/`: Model boundaries and custom validators.

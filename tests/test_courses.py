@@ -10,9 +10,11 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_courses_directory_is_discovered() -> None:
     courses = discover_courses(ROOT)
-    assert [course.name for course in courses] == [
-        "hands-on-python-with-claude-code"
-    ]
+    names = {course.name for course in courses}
+    assert {
+        "hands-on-python-with-claude-code",
+        "hands-on-with-openai-codex-cli",
+    } <= names
 
 
 def test_course_folders_satisfy_the_bilingual_contract() -> None:
