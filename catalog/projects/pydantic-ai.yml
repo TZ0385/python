@@ -1,0 +1,24 @@
+id: pydantic-ai
+repo: pydantic/pydantic-ai
+url: https://github.com/pydantic/pydantic-ai
+category: ai-agents
+status: rising
+first_seen: 2026-09-02
+reviewed_on: 2026-09-02
+license: MIT
+evidence:
+  last_release: "Active pre-1.0 release train; verified against the repository releases page at review time."
+  release_cadence: "Frequent releases while the API surface evolves."
+  maintenance: "Maintained by the Pydantic team; expect breaking changes before 1.0."
+ai_familiarity: low
+alternatives: [openai-agents-sdk, langgraph]
+rationale_en: Model-agnostic agent framework prioritizing type-safe structured outputs,
+  dependency injection, and testability.
+rationale_zh: 模型无关的 Agent 框架，优先保证类型安全的结构化输出、依赖注入与
+  可测试性。
+when_not_to_use_en: When you need a stable long-lived API surface today, or heavy
+  multi-agent orchestration features.
+when_not_to_use_zh: 需要当下就稳定的长周期 API，或重度多 Agent 编排能力时。
+risk_en: Rapidly evolving API surface; pin minor versions and re-run your evals on
+  every upgrade.
+risk_zh: API 演进迅速；固定小版本，每次升级后重跑评测。

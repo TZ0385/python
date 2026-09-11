@@ -28,3 +28,7 @@ python examples/product-slug/verify.py starter
 
 可以和 `solution/product_slug.py` 对照。目标不是复制相同语法，而是用小而可读的 diff
 满足同一份契约。
+
+---
+
+在 [flypython.com](https://flypython.com/examples/zh/product-slug) 查看本示例的在线版本：可浏览的任务契约、分步说明与每个示例的当前审核状态。

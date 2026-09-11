@@ -6,6 +6,12 @@
 
 [English](README.md) · [中文](README_cn.md) · [🌐 Online Portal](https://flypython.com)
 
+> **New — agent-taught courses with objective verification.** Download a
+> folder from [`courses/`](courses/), open it in your coding agent, and say
+> *"start lesson 1"*. Every course ends with a `verify.py` command that
+> proves what you built. Continue the same journey on
+> [flypython.com](https://flypython.com/).
+
 FlyPython is a practical, bilingual repository for writing good Python and
 turning it into products people can rely on. It combines AI-coding methods,
 task playbooks, runnable examples, reusable templates, and reviewed primary
@@ -35,6 +41,7 @@ to a coding agent (Cursor, Windsurf, Claude Code, Copilot) and make the starter 
 
 | Goal | Start here | What you will produce |
 | --- | --- | --- |
+| Learn hands-on with your coding agent | [Agent-taught courses](courses/) | A verified project: task contract → bounded change → `verify.py` evidence |
 | Write and change Python safely | [AI Coding workflow](guides/ai-coding/workflow.md) | A bounded change with explicit context and evidence |
 | Turn Python into a reliable product | [Product quality guide](guides/python-engineering/product-quality.md) | A tested, observable, reversible product path |
 | Finish a recurring engineering task | [Playbooks](playbooks/README.md) | A bug fix, API change, integration, dependency upgrade, or release |

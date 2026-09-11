@@ -54,3 +54,7 @@ class UserProfile(TypedDict):
 或 Pyright，确保公共接口类型完备。
 
 更多类型系统权威规范可参考官方 [Python typing documentation](https://typing.python.org/en/latest/)。
+
+---
+
+在 [flypython.com](https://flypython.com/learn/zh/modern-python-typing) 继续这个主题：配套的导读路径、前置条件、相关清单与最新审核日期。

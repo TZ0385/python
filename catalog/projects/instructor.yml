@@ -1,0 +1,24 @@
+id: instructor
+repo: jxnl/instructor
+url: https://github.com/jxnl/instructor
+category: ai-tools
+status: stable
+first_seen: 2026-09-02
+reviewed_on: 2026-09-02
+license: MIT
+evidence:
+  last_release: "Active release train; verified against the repository releases page at review time."
+  release_cadence: "Regular releases tracking provider API changes."
+  maintenance: "Actively maintained with broad provider integration coverage."
+ai_familiarity: medium
+alternatives: [openai structured outputs, outlines]
+rationale_en: Production standard for extracting structured JSON from LLMs using
+  Pydantic models with retry validation.
+rationale_zh: 从 LLM 提取结构化 JSON 的事实标准，基于 Pydantic 模型并带重试
+  校验。
+when_not_to_use_en: When your provider already enforces structured outputs natively
+  and you need nothing beyond it.
+when_not_to_use_zh: 所用提供商已原生强制结构化输出、且不需要更多能力时。
+risk_en: Requires API keys for the target LLM providers; retry loops add latency and
+  token cost.
+risk_zh: 需要目标 LLM 提供商的 API Key；重试循环会增加延迟与 token 成本。

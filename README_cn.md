@@ -6,6 +6,11 @@
 
 [English](README.md) · [中文](README_cn.md) · [🌐 官方在线门户](https://flypython.com)
 
+> **新——由 Agent 授课、带客观验证的实战课程。** 从 [`courses/`](courses/) 下载一个
+> 文件夹，在你的编码 Agent 中打开，说一句*“开始第 1 课”*。每门课程都以一条
+> `verify.py` 命令收尾，证明你确实做出了什么。同一旅程可继续在
+> [flypython.com](https://flypython.com/) 上进行。
+
 FlyPython 是一个面向实践的双语仓库，帮助你写好 Python，并把代码变成用户可以依赖的
 产品。这里同时提供 AI Coding 方法、任务 Playbook、可运行示例、复用模板，以及 API、
 自动化、Agent、Skill 和 MCP 的一手资料。
@@ -33,6 +38,7 @@ python examples/product-slug/verify.py solution
 
 | 目标 | 从这里开始 | 最终产出 |
 | --- | --- | --- |
+| 跟随编码 Agent 动手实战 | [Agent 授课课程](courses/) | 一个通过验证的项目：任务契约 → 边界修改 → `verify.py` 证据 |
 | 安全地编写和修改 Python | [AI Coding 工作方法](guides/ai-coding/workflow_cn.md) | 上下文明确、有证据的边界修改 |
 | 把 Python 变成可靠产品 | [产品质量指南](guides/python-engineering/product-quality_cn.md) | 可测试、可观测、可回退的产品路径 |
 | 完成反复出现的工程任务 | [Playbook](playbooks/README_cn.md) | Bug 修复、API 修改、外部集成、依赖升级或发布 |

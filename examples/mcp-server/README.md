@@ -38,3 +38,7 @@ python examples/mcp-server/verify.py starter
 
 For the full migration background — what was removed, deprecated, and hardened in
 2026-07-28 — read [Migrate a Python MCP server to the 2026-07-28 specification](../../guides/mcp/migrate-2026-07-28.md).
+
+---
+
+See this example on [flypython.com](https://flypython.com/examples/mcp-server): the browsable contract, step-by-step walkthrough, and current review state.

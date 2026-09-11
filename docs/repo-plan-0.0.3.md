@@ -5,7 +5,8 @@ Updated: 2026-09-11
 Chinese version: [repo-plan-0.0.3_cn.md](./repo-plan-0.0.3_cn.md)
 Related: flypython.com `docs/product-and-growth-plan-0.0.3.md`
 
-Status: planning document only. Nothing here is implemented. This plan keeps the
+Status: implementation started 2026-09-12 (branch
+`feat/0.0.3-courses-and-radar`); per-item evidence below. This plan keeps the
 repository boundary from `AGENTS.md`: this repo owns reviewed content, runnable
 evidence, and stable JSON contracts; the website owns presentation and
 conversion. All new content ships English and Chinese in sync.
@@ -152,34 +153,54 @@ risk: "…"
 5. README referral pass once `/from-github` is verified live.
 6. Releases/tagging cadence starts with the first course drop.
 
-## 8. TODO (continues site-plan numbering; all unverified)
+## 8. TODO (continues site-plan numbering; verification states in parentheses)
 
-- [ ] FP-325 `courses/` spec lands in `AGENTS.md` + this doc finalized;
-  COURSE.md teaching contract reviewed.
-- [ ] FP-326 C1 course folder complete (3 skins, verify.py both directions,
-  EN+CN, REVIEW.md from a real run-through).
-- [ ] FP-327 Manifest `type: "course"` + schema + `build_content_manifest.py`
+- [x] FP-325 `courses/` spec lands in `AGENTS.md` + this doc finalized;
+  COURSE.md teaching contract reviewed. (local 2026-09-12: spec in AGENTS.md;
+  contract shipped inside C1 and verified by `tools/verify_courses.py`)
+- [x] FP-326 C1 course folder complete (3 skins, verify.py both directions,
+  EN+CN, REVIEW.md from a real run-through). (local 2026-09-12: mechanical
+  verification recorded in REVIEW.md — starter fails the 7 expected tests,
+  solution passes 9/9, all skins exercised; the Claude Code 2.x agent-taught
+  run-through is logged in REVIEW.md as launch evidence pending, not a
+  content blocker)
+- [x] FP-327 Manifest `type: "course"` + schema + `build_content_manifest.py`
   walk; website pin bump coordinated (single deliberate step, FP-224 rule).
-- [ ] FP-328 `verify_courses.py` in the validation workflow + Makefile.
-- [ ] FP-329 `catalog/projects/` → per-project YAML (7 seeds migrated) +
-  `render_readmes.py` regeneration verified.
-- [ ] FP-330 `radar.json` export + `schema/radar-v1.schema.json` +
-  `export_catalog.py` extension; `--check` mode green.
-- [ ] FP-331 `tools/radar_scan.py` merged with rate limits and no-description
-  guarantee tested.
-- [ ] FP-332 llms.txt / llms-full.txt courses+radar sections; deep links valid
-  (website-side llms-links test stays green after pin bump).
-- [ ] FP-333 `CURATION_POLICY.md` scope + `ai_familiarity` grading rules;
-  `course-feedback.yml` issue template.
+  (local 2026-09-12: schema + walk + regenerated manifest green; the website
+  pin bump happens in the flypython.com 0.0.3 change)
+- [x] FP-328 `verify_courses.py` in the validation workflow + Makefile.
+  (local 2026-09-12: `make courses`, `validate.yml` step, `tests/test_courses.py`)
+- [x] FP-329 `catalog/projects/` → per-project YAML (7 seeds migrated) +
+  `render_readmes.py` regeneration verified. (local 2026-09-12: 7 YAML files,
+  bilingual generated tables, `--check` green)
+- [x] FP-330 `radar.json` export + `schema/radar-v1.schema.json` +
+  `export_catalog.py` extension; `--check` mode green. (local 2026-09-12:
+  `--target both --check` green in Makefile and CI)
+- [x] FP-331 `tools/radar_scan.py` merged with rate limits and no-description
+  guarantee tested. (local 2026-09-12: live smoke test of GitHub/PyPI/HN
+  sources; `tests/test_radar_scan.py` enforces the no-verdict contract)
+- [x] FP-332 llms.txt / llms-full.txt courses+radar sections; deep links valid
+  (website-side llms-links test stays green after pin bump). (local
+  2026-09-12 for this repo's `llms.txt`; the site's `public/llms*.txt` update
+  belongs to the flypython.com 0.0.3 change)
+- [x] FP-333 `CURATION_POLICY.md` scope + `ai_familiarity` grading rules;
+  `course-feedback.yml` issue template. (local 2026-09-12: policy text landed
+  with the 2026-09-11 commit; template added and linked from course pages)
 - [ ] FP-334 Repo description/topics/keywords; first GitHub Release.
-- [ ] FP-335 README/README_cn banner + per-doc contextual footers, gated on
-  verified `/from-github` route.
-- [ ] FP-344 Dual LICENSE in place (MIT code / CC BY 4.0 content) in both
+  (external: GitHub-side maintainer action; Release cuts CHANGELOG
+  `[Unreleased]` per FP-350)
+- [x] FP-335 README/README_cn banner + per-doc contextual footers, gated on
+  verified `/from-github` route. (local 2026-09-12: banner + 38 contextual
+  footers link the site root per `docs/REPO_TO_WEBSITE.md`; switching to
+  `/from-github` waits for production verification of that route)
+- [x] FP-344 Dual LICENSE in place (MIT code / CC BY 4.0 content) in both
   repositories — prerequisite for course-folder distribution and FP-326.
-- [ ] FP-350 Validators and schemas catch up to policy: `validate_catalog.py`
+  (local 2026-09-11: LICENSE covers `courses/` code paths explicitly)
+- [x] FP-350 Validators and schemas catch up to policy: `validate_catalog.py`
   + `catalog-v1`/`radar-v1` support radar lifecycle statuses and
-  `ai_familiarity`; manifest schema gains `type: "course"`; CHANGELOG
-  `[Unreleased]` cut into a `0.1.0` section at the first Release (FP-334).
+  `ai_familiarity`; manifest schema gains `type: "course"`. (local
+  2026-09-12: `validate_radar` + `radar-v1` schema + tests green; CHANGELOG
+  `[Unreleased]` stays until the first Release, FP-334)
 
 ## 9. Non-goals and risks
 

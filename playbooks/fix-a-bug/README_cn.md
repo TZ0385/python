@@ -21,3 +21,7 @@ reviewed_on: 2026-09-02
 7. 重跑原始用户路径，并在[验证记录](../../templates/VERIFICATION_cn.md)中写下命令与结果。
 
 可以用 [product slug 示例](../../examples/product-slug/README_cn.md)完成一次完整练习。
+
+---
+
+在 [flypython.com](https://flypython.com/learn/zh) 的中文指南索引中继续这个任务：每份清单背后的完整指南与经过审核的资料目录。

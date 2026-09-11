@@ -20,3 +20,7 @@ reviewed_on: 2026-09-02
 5. Check health, logs, data changes, and critical integrations.
 6. If acceptance fails, stop rollout and use the documented rollback. Announce
    availability only after the verified artifact is reachable.
+
+---
+
+Continue this task on [flypython.com](https://flypython.com/resources#ship-a-python-release): the full playbook directory, the guide behind each checklist, and the reviewed source catalog.

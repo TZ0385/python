@@ -168,3 +168,7 @@ Use the repository README to choose primary sources for Python foundations,
 Web/API work, automation, or AI-agent development. The catalog helps you choose
 reliable context; this workflow helps you decide whether an AI-generated change
 is safe to accept.
+
+---
+
+Continue this topic on [flypython.com](https://flypython.com/learn/ai-coding-workflow): the guided reading path, prerequisites, related checklists, and current review dates.

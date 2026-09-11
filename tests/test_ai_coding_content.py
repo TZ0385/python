@@ -8,6 +8,9 @@ import yaml
 from tools.catalog import load_catalog
 
 ROOT = Path(__file__).resolve().parents[1]
+# flypython.com links are first-party contextual continuations governed by
+# docs/REPO_TO_WEBSITE.md, not catalog references.
+FIRST_PARTY_PREFIX = "https://flypython.com"
 GUIDES = {
     "en-US": ROOT / "guides" / "ai-coding" / "workflow.md",
     "zh-CN": ROOT / "guides" / "ai-coding" / "workflow_cn.md",
@@ -48,7 +51,7 @@ def test_guide_reference_urls_come_from_reviewed_catalog() -> None:
         _, body = load_guide(path)
         urls = set(re.findall(r"\]\((https://[^)]+)\)", body))
         assert urls
-        assert urls <= catalog_urls
+        assert {url for url in urls if not url.startswith(FIRST_PARTY_PREFIX)} <= catalog_urls
 
 
 def test_readmes_link_to_the_matching_ai_coding_guide() -> None:

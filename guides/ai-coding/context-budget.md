@@ -41,3 +41,7 @@ A sub-second test loop allows the agent to iterate and fix errors autonomously b
 
 Always inspect git diffs to ensure the agent did not delete unrelated comments,
 introduce unpinned dependencies, or modify shared global state.
+
+---
+
+Continue this topic on [flypython.com](https://flypython.com/learn/ai-coding-context-budget): the guided reading path, prerequisites, related checklists, and current review dates.

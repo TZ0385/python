@@ -55,3 +55,7 @@ in an `asyncio.Semaphore` to cap open file descriptors and avoid rate-limiting t
 
 Always use `try...finally` blocks or async context managers to release database connections,
 network sessions, and lock resources when an async operation is cancelled.
+
+---
+
+Continue this topic on [flypython.com](https://flypython.com/learn/reliable-async-patterns): the guided reading path, prerequisites, related checklists, and current review dates.

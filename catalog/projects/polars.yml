@@ -1,0 +1,25 @@
+id: polars
+repo: pola-rs/polars
+url: https://github.com/pola-rs/polars
+category: data-pipelines
+status: stable
+first_seen: 2026-09-02
+reviewed_on: 2026-09-02
+license: MIT
+evidence:
+  last_release: "Active release train; verified against the repository releases page at review time."
+  release_cadence: "Frequent releases; performance-focused changelogs."
+  maintenance: "Actively maintained by the Polars team and a growing contributor base."
+ai_familiarity: medium
+alternatives: [pandas, duckdb, dask]
+rationale_en: High-performance DataFrame library built in Rust on Apache Arrow with
+  lazy query optimization.
+rationale_zh: 高性能 DataFrame 库，基于 Rust 与 Apache Arrow，支持惰性查询
+  优化。
+when_not_to_use_en: When your pipeline leans on the pandas ecosystem (accessors,
+  narrow libraries) or you need index-heavy semantics.
+when_not_to_use_zh: 管线依赖 pandas 生态（accessor、小众库）或需要重度索引语义时。
+risk_en: API differs from pandas and memory layout is columnar; budget migration
+  time rather than assuming drop-in parity.
+risk_zh: API 与 pandas 不同、内存为列式布局；迁移需要预留时间，不能当作
+  直接替换。

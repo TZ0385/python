@@ -1,18 +1,24 @@
 # FlyPython Repository Index for LLMs and AI Agents
 
-> FlyPython provides production-tested Python engineering playbooks, verifiable test-driven starter examples, task contracts, and agent IDE rules.
+> FlyPython provides production-tested Python engineering playbooks, agent-taught courses with objective verification, verifiable test-driven starter examples, task contracts, and agent IDE rules.
 
 ## Quick API and Automation Commands
 
 - Run full test suite with uv: `uv run pytest`
 - Verify runnable examples: `python tools/verify_examples.py`
+- Verify course folders: `python tools/verify_courses.py`
 - Validate and inspect resource catalog: `python tools/validate_catalog.py`
+- Discover Radar review candidates: `python tools/radar_scan.py --dry-run`
 - Structured Content Manifest: `content-manifest.json`
 - Full curated catalog data: `catalog.json`
+- Project Radar data: `radar.json`
 
 ## Machine-Readable Directories
 
 - `catalog/resources/`: YAML files representing verified libraries, tools, and platforms.
+- `catalog/projects/`: One reviewed YAML file per Project Radar entry, plus the discovery queue `candidates.json`.
+- `courses/`: Agent-taught course folders; download one and say "start lesson 1":
+  - `courses/hands-on-python-with-claude-code/`: Task contract, bounded change, and objective verify.py evidence with Claude Code (EN+ZH lessons, three scenario skins).
 - `examples/`: Reproducible test projects with failing starters and verified solutions:
   - `examples/product-slug/`: String normalization edge cases and regex safety.
   - `examples/pydantic-validation/`: Model boundaries and custom validators.

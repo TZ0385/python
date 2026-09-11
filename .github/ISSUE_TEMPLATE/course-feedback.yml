@@ -1,0 +1,46 @@
+name: Course feedback
+description: Report teaching drift, an unclear lesson, or a verify.py mismatch in a course folder.
+title: "[Course]: "
+labels: ["course-feedback"]
+body:
+  - type: input
+    id: course
+    attributes:
+      label: Course folder
+      description: Which courses/<slug>/ folder did you take?
+      placeholder: courses/hands-on-python-with-claude-code/
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What went wrong?
+      options:
+        - The agent drifted from COURSE.md (ignored rules, scope, or lesson order)
+        - A lesson was unclear or wrong
+        - verify.py result did not match the lesson's checkpoint
+        - Starter/solution/tests problem
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: lesson
+    attributes:
+      label: Lesson
+      description: Which lesson (L01–L05), if lesson-specific?
+    validations:
+      required: false
+  - type: textarea
+    id: detail
+    attributes:
+      label: What happened?
+      description: Describe what the agent did or what confused you. Include the exact command and output when reporting a verify.py mismatch.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Tool and version (e.g. Claude Code 2.x), Python version, operating system.
+    validations:
+      required: true

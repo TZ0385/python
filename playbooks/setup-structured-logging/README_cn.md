@@ -17,3 +17,7 @@ reviewed_on: 2026-09-02
 4. 在日志处理器中配置敏感字段自动脱敏过滤器（覆盖 `password`、`token`、`authorization`、`api_key` 及用户个人隐私信息）。
 5. 仅在服务边界处使用 `exc_info=True` 捕获完整异常堆栈；禁止在多层嵌套的 `try...except` 中重复记录冗余的原始错误堆栈。
 6. 在自动化测试中针对日志结构字典字段进行确切断言，而非脆弱的非结构化子串正则匹配。
+
+---
+
+在 [flypython.com](https://flypython.com/learn/zh) 的中文指南索引中继续这个任务：每份清单背后的完整指南与经过审核的资料目录。

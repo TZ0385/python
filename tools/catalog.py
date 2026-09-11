@@ -41,6 +41,46 @@ STATUSES = {"active"}
 RISKS = {"low", "medium"}
 ID_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 
+RADAR_KEYS = {
+    "id",
+    "repo",
+    "url",
+    "category",
+    "status",
+    "first_seen",
+    "reviewed_on",
+    "license",
+    "evidence",
+    "ai_familiarity",
+    "alternatives",
+    "rationale_en",
+    "rationale_zh",
+    "when_not_to_use_en",
+    "when_not_to_use_zh",
+    "risk_en",
+    "risk_zh",
+}
+RADAR_STATUSES = {
+    "new",
+    "rising",
+    "stable",
+    "major-update",
+    "experimental",
+    "archived",
+}
+RADAR_CATEGORIES = {
+    "tooling-packaging",
+    "code-quality",
+    "web-apis",
+    "ai-agents",
+    "ai-tools",
+    "data-pipelines",
+    "notebooks",
+}
+AI_FAMILIARITY = {"low", "medium", "high"}
+EVIDENCE_KEYS = {"last_release", "release_cadence", "maintenance"}
+REPO_PATTERN = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
+
 
 class CatalogLoadError(ValueError):
     """Raised when the catalog cannot be parsed safely."""
@@ -538,3 +578,192 @@ def validate_catalog(
 def catalog_resources(data: Mapping[str, Any]) -> Sequence[Mapping[str, Any]]:
     resources = data.get("resources")
     return resources if isinstance(resources, list) else []
+
+
+def load_radar(path: str | Path) -> list[dict[str, Any]]:
+    """Load the per-project Radar YAML files under ``catalog/projects/``."""
+
+    projects_dir = Path(path)
+    if not projects_dir.is_dir():
+        raise CatalogLoadError(f"missing radar directory: {projects_dir}")
+
+    projects: list[dict[str, Any]] = []
+    for project_path in sorted(projects_dir.glob("*.yml")):
+        project = _load_yaml(project_path)
+        if not isinstance(project, dict):
+            raise CatalogLoadError(f"{project_path} must contain a YAML mapping")
+        project_id = project.get("id")
+        if project_id != project_path.stem:
+            raise CatalogLoadError(
+                f"{project_path}: radar id must match filename {project_path.stem!r}"
+            )
+        projects.append(project)
+    projects.sort(key=lambda project: str(project.get("id", "")))
+    return projects
+
+
+def validate_radar(
+    projects: Sequence[Mapping[str, Any]],
+    *,
+    today: date | None = None,
+    max_review_age_days: int = 366,
+) -> list[ValidationIssue]:
+    """Validate the Project Radar records: schema, enums, dates, parity."""
+
+    today = today or date.today()
+    issues: list[ValidationIssue] = []
+    seen_ids: set[str] = set()
+
+    for index, project in enumerate(projects):
+        location = f"$.radar[{index}]"
+        if not isinstance(project, dict):
+            issues.append(ValidationIssue("invalid-type", location, "must be a mapping"))
+            continue
+        issues.extend(_missing_or_unknown(project, RADAR_KEYS, location))
+        for key in (
+            "repo",
+            "url",
+            "license",
+            "rationale_en",
+            "rationale_zh",
+            "when_not_to_use_en",
+            "when_not_to_use_zh",
+            "risk_en",
+            "risk_zh",
+        ):
+            issues.extend(_required_text(project, key, location))
+
+        project_id = project.get("id")
+        if isinstance(project_id, str):
+            if not ID_PATTERN.fullmatch(project_id):
+                issues.append(
+                    ValidationIssue(
+                        "invalid-id",
+                        f"{location}.id",
+                        "must be a lowercase kebab-case identifier",
+                    )
+                )
+            if project_id in seen_ids:
+                issues.append(
+                    ValidationIssue("duplicate-id", f"{location}.id", project_id)
+                )
+            seen_ids.add(project_id)
+
+        repo = project.get("repo")
+        if isinstance(repo, str) and not REPO_PATTERN.fullmatch(repo):
+            issues.append(
+                ValidationIssue(
+                    "invalid-repo", f"{location}.repo", "must be owner/name"
+                )
+            )
+
+        url = project.get("url")
+        if isinstance(url, str) and url.strip():
+            parsed = urlsplit(url)
+            if parsed.scheme.lower() != "https" or not parsed.hostname:
+                issues.append(
+                    ValidationIssue(
+                        "https-required",
+                        f"{location}.url",
+                        "must be an absolute HTTPS URL",
+                    )
+                )
+
+        for key, allowed in (
+            ("status", RADAR_STATUSES),
+            ("category", RADAR_CATEGORIES),
+            ("ai_familiarity", AI_FAMILIARITY),
+        ):
+            if project.get(key) not in allowed:
+                issues.append(
+                    ValidationIssue(
+                        "invalid-enum",
+                        f"{location}.{key}",
+                        f"must be one of {sorted(allowed)}",
+                    )
+                )
+
+        alternatives = project.get("alternatives")
+        if not isinstance(alternatives, list) or not all(
+            isinstance(item, str) and item.strip() for item in alternatives
+        ):
+            issues.append(
+                ValidationIssue(
+                    "invalid-alternatives",
+                    f"{location}.alternatives",
+                    "must be a list of non-empty strings",
+                )
+            )
+        elif len(set(alternatives)) != len(alternatives):
+            issues.append(
+                ValidationIssue(
+                    "duplicate-alternatives",
+                    f"{location}.alternatives",
+                    "alternatives must be unique",
+                )
+            )
+
+        evidence = project.get("evidence")
+        if not isinstance(evidence, dict):
+            issues.append(
+                ValidationIssue("invalid-type", f"{location}.evidence", "must be a mapping")
+            )
+        else:
+            string_keys = {key for key in evidence if isinstance(key, str)}
+            for key in sorted(EVIDENCE_KEYS - string_keys):
+                issues.append(
+                    ValidationIssue(
+                        "missing-field", f"{location}.evidence", f"missing {key!r}"
+                    )
+                )
+            for key in sorted(string_keys - EVIDENCE_KEYS):
+                issues.append(
+                    ValidationIssue(
+                        "unknown-field", f"{location}.evidence.{key}", "unknown field"
+                    )
+                )
+            for key in sorted(EVIDENCE_KEYS & string_keys):
+                raw = evidence.get(key)
+                if not isinstance(raw, str) or not raw.strip():
+                    issues.append(
+                        ValidationIssue(
+                            "invalid-text",
+                            f"{location}.evidence.{key}",
+                            "must be a non-empty string",
+                        )
+                    )
+
+        first_seen = _date_value(project.get("first_seen"))
+        reviewed_on = _date_value(project.get("reviewed_on"))
+        for key, value in (("first_seen", first_seen), ("reviewed_on", reviewed_on)):
+            if value is None:
+                issues.append(
+                    ValidationIssue(
+                        "invalid-date", f"{location}.{key}", "must be YYYY-MM-DD"
+                    )
+                )
+            elif value > today:
+                issues.append(
+                    ValidationIssue(
+                        "future-date", f"{location}.{key}", "cannot be in the future"
+                    )
+                )
+        if reviewed_on is not None:
+            if (today - reviewed_on).days > max_review_age_days:
+                issues.append(
+                    ValidationIssue(
+                        "stale-review",
+                        f"{location}.reviewed_on",
+                        f"older than {max_review_age_days} days",
+                    )
+                )
+            if first_seen is not None and reviewed_on < first_seen:
+                issues.append(
+                    ValidationIssue(
+                        "date-parity",
+                        f"{location}.reviewed_on",
+                        "cannot be earlier than first_seen",
+                    )
+                )
+
+    return issues

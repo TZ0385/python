@@ -23,3 +23,7 @@ reviewed_on: 2026-09-02
    do not log redundant raw tracebacks across multiple nested catch blocks.
 6. Verify log generation under test by asserting structured dictionary fields
    rather than brittle substring matches.
+
+---
+
+Continue this task on [flypython.com](https://flypython.com/resources#setup-structured-logging): the full playbook directory, the guide behind each checklist, and the reviewed source catalog.

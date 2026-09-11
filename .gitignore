@@ -42,3 +42,7 @@ __pycache__/
 
 # Generated reports
 reports/
+
+# Course scenario output written by learners running report_tool.py
+courses/*/scenario/*/report.json
+courses/*/scenario/*/report.json.tmp

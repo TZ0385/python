@@ -29,3 +29,7 @@ python examples/product-slug/verify.py starter
 
 Compare the patch with `solution/product_slug.py`. The goal is not to reproduce
 the same syntax; it is to satisfy the same contract with a small, readable diff.
+
+---
+
+See this example on [flypython.com](https://flypython.com/examples/product-slug): the browsable contract, step-by-step walkthrough, and current review state.

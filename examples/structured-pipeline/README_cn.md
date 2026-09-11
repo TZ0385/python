@@ -25,3 +25,7 @@ python examples/structured-pipeline/verify.py solution
 ```bash
 python examples/structured-pipeline/verify.py starter
 ```
+
+---
+
+在 [flypython.com](https://flypython.com/examples/zh/structured-pipeline) 查看本示例的在线版本：可浏览的任务契约、分步说明与每个示例的当前审核状态。

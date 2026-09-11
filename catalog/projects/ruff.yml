@@ -1,0 +1,24 @@
+id: ruff
+repo: astral-sh/ruff
+url: https://github.com/astral-sh/ruff
+category: code-quality
+status: stable
+first_seen: 2026-09-02
+reviewed_on: 2026-09-02
+license: MIT
+evidence:
+  last_release: "Active release train; verified against the repository releases page at review time."
+  release_cadence: "Frequent releases with annotated changelogs."
+  maintenance: "Actively maintained by Astral; broad adoption across major projects."
+ai_familiarity: high
+alternatives: [flake8, black, isort, pylint]
+rationale_en: 10-100x faster linter and formatter that unifies Flake8, Black, isort,
+  and pyupgrade rules in a single configuration.
+rationale_zh: 快 10–100 倍的 linter 与格式化工具，把 Flake8、Black、isort、
+  pyupgrade 规则统一到一份配置里。
+when_not_to_use_en: When a project depends on plugin ecosystems (e.g. Flake8 plugins)
+  that have no Ruff equivalent yet.
+when_not_to_use_zh: 项目依赖尚无 Ruff 等价实现的插件生态（如 Flake8 插件）时。
+risk_en: Drop-in Black compatibility; rare syntax-parsing differences surface on
+  unusual code bases.
+risk_zh: 与 Black 基本兼容；在非常规代码上偶见语法解析差异。

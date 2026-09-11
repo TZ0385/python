@@ -28,3 +28,7 @@ ask it to fix only `starter/fetcher.py`, and run:
 ```bash
 python examples/async-fetcher/verify.py starter
 ```
+
+---
+
+See this example on [flypython.com](https://flypython.com/examples/async-fetcher): the browsable contract, step-by-step walkthrough, and current review state.

@@ -27,8 +27,21 @@ reviewed catalog data, and stable public JSON contracts.
 - Governance documents (`AGENTS.md`, `CONTRIBUTING.md`, `docs/CONSUMING.md`,
   `docs/CURATION_POLICY.md`, `docs/REPO_TO_WEBSITE.md`, plans) are
   English-canonical; a `_cn` companion may exist but the English text governs.
-- Add first-party guides and playbooks to `content-manifest.json`; keep each
-  locale pair aligned and verify its source checksum.
+- Add first-party guides, playbooks, and courses to `content-manifest.json`;
+  keep each locale pair aligned and verify its source checksum.
+- Courses live one folder per course under `courses/<slug>/` and are taught by
+  an AI coding agent from the files themselves: `COURSE.md` (metadata plus the
+  teaching contract: audience, prerequisites, exact tool and version,
+  lesson order, teaching-style rules, when to stop, how to use `verify.py`,
+  and what the course does not cover), `lessons/L01.md` with `L01_cn.md`
+  pairs (objective, exercise, checkpoint, expected evidence), `scenario/`
+  data files for each skin, `TASK.md`/`TASK_cn.md` (task contract),
+  `starter/` and `solution/` runnable pairs, stdlib-only `verify.py` that
+  fails on `starter` and passes on `solution`, and `REVIEW.md` recording the
+  maintainer run-through (date, tool, version, observed agent deviations).
+  A course is incomplete until every lesson ships EN+ZH in the same change;
+  `COURSE.md` must name the exact tool version it was taught with, and a tool
+  major release triggers re-review. Never claim guaranteed learning outcomes.
 - Treat HTTP 403, 429, and transient 5xx responses as review-needed states, not
   automatic proof that a resource is broken.
 
@@ -36,13 +49,14 @@ reviewed catalog data, and stable public JSON contracts.
 
 - Work on a feature branch and preserve unrelated contributor changes.
 - Run the repository validation workflow before committing.
-- Regenerate `catalog.json` after source changes and verify it with
-  `python tools/export_catalog.py --check`.
-- Regenerate both README catalog indexes and verify them with
-  `python tools/render_readmes.py --check`.
+- Regenerate `catalog.json` and `radar.json` after source changes and verify
+  them with `python tools/export_catalog.py --check --target both`.
+- Regenerate both README catalog indexes and the Project Radar table, then
+  verify them with `python tools/render_readmes.py --check`.
 - Regenerate `content-manifest.json` and verify it with
   `python tools/build_content_manifest.py --check`.
-- Verify every runnable example with `python tools/verify_examples.py`.
+- Verify every runnable example with `python tools/verify_examples.py` and
+  every course folder with `python tools/verify_courses.py`.
 - Website consumers must pin a full repository commit and verify the catalog
   checksum. Do not make production builds depend on a moving branch.
 - Keep external-link checks read-only, rate-limited, retryable, and blocked from

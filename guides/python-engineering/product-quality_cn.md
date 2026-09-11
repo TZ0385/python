@@ -58,3 +58,7 @@ reviewed_on: 2026-09-02
 - 日志和健康信号能回答行动问题且不泄漏秘密；
 - 已知发布与回退命令；
 - 已通过真实用户路径检查生产行为。
+
+---
+
+在 [flypython.com](https://flypython.com/learn/zh/python-product-quality) 继续这个主题：配套的导读路径、前置条件、相关清单与最新审核日期。

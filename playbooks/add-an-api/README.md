@@ -22,3 +22,7 @@ reviewed_on: 2026-09-02
    provider errors or secrets directly to clients.
 6. Verify the API through the same network boundary a real client uses, then
    inspect logs and state changes.
+
+---
+
+Continue this task on [flypython.com](https://flypython.com/resources#add-or-change-a-python-api): the full playbook directory, the guide behind each checklist, and the reviewed source catalog.

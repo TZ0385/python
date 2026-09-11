@@ -25,3 +25,7 @@ Verify with:
 ```bash
 python examples/structured-pipeline/verify.py starter
 ```
+
+---
+
+See this example on [flypython.com](https://flypython.com/examples/structured-pipeline): the browsable contract, step-by-step walkthrough, and current review state.

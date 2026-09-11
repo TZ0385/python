@@ -161,3 +161,7 @@ AI 生成的 Python 经常会操作文件、Shell、浏览器、网络、数据�
 根据正在开发的系统，从仓库 README 中继续选择 Python 基础、Web/API、自动化或 AI Agent
 的一手资料。资源目录帮助你选择可靠上下文；这套工作循环帮助你判断 AI 生成的修改是否
 真的可以接受。
+
+---
+
+在 [flypython.com](https://flypython.com/learn/zh/ai-coding-workflow) 继续这个主题：配套的导读路径、前置条件、相关清单与最新审核日期。

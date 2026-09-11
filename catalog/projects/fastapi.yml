@@ -1,0 +1,25 @@
+id: fastapi
+repo: fastapi/fastapi
+url: https://github.com/fastapi/fastapi
+category: web-apis
+status: stable
+first_seen: 2026-09-02
+reviewed_on: 2026-09-02
+license: MIT
+evidence:
+  last_release: "Active release train; verified against the repository releases page at review time."
+  release_cadence: "Regular minor releases; security fixes ship promptly."
+  maintenance: "Large maintainer team and contributor base; de facto standard for typed ASGI services."
+ai_familiarity: high
+alternatives: [flask, django-ninja, litestar]
+rationale_en: Production-standard ASGI framework with automatic OpenAPI docs, Pydantic
+  validation, and dependency injection.
+rationale_zh: 生产级 ASGI 框架，自带 OpenAPI 文档、Pydantic 校验与依赖注入。
+when_not_to_use_en: For non-HTTP services, or teams standardized on Django's bundled
+  ORM/admin stack.
+when_not_to_use_zh: 非 HTTP 服务，或已围绕 Django 自带 ORM 与 admin 体系标准化的
+  团队。
+risk_en: Ensure background tasks handle errors properly and use async endpoints
+  responsibly; blocking calls inside async routes degrade the whole service.
+risk_zh: 需正确处理后台任务异常、审慎使用 async 端点；在 async 路由中执行阻塞
+  调用会拖垮整个服务。

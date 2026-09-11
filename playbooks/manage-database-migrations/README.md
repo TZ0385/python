@@ -23,3 +23,7 @@ reviewed_on: 2026-09-02
    tables under heavy concurrent workloads.
 6. Verify application behavior with both old and new schema versions active to guarantee
    zero-downtime rolling deployment safety.
+
+---
+
+Continue this task on [flypython.com](https://flypython.com/resources#manage-database-migrations): the full playbook directory, the guide behind each checklist, and the reviewed source catalog.

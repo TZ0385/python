@@ -10,6 +10,9 @@ from tools.catalog import load_catalog
 from tools.content_manifest import build_manifest
 
 ROOT = Path(__file__).resolve().parents[1]
+# flypython.com links are first-party contextual continuations governed by
+# docs/REPO_TO_WEBSITE.md, not catalog references.
+FIRST_PARTY_PREFIX = "https://flypython.com"
 
 
 def _extract_frontmatter(path: Path) -> dict[str, Any]:
@@ -35,6 +38,8 @@ def test_bilingual_guide_urls_are_in_catalog() -> None:
         text = guide_path.read_text(encoding="utf-8")
         external_urls = set(re.findall(r"\]\((https://[^)]+)\)", text))
         for url in external_urls:
+            if url.startswith(FIRST_PARTY_PREFIX):
+                continue
             assert url in catalog_urls, (
                 f"Guide {guide_path.relative_to(ROOT)} references unreviewed URL: {url}"
             )
