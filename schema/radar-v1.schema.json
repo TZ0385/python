@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FlyPython Project Radar export",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema_version", "projects"],
+  "properties": {
+    "$schema": {
+      "const": "./schema/radar-v1.schema.json"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "projects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "repo",
+          "url",
+          "category",
+          "status",
+          "first_seen",
+          "reviewed_on",
+          "license",
+          "evidence",
+          "ai_familiarity",
+          "alternatives",
+          "rationale_en",
+          "rationale_zh",
+          "when_not_to_use_en",
+          "when_not_to_use_zh",
+          "risk_en",
+          "risk_zh"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "repo": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "tooling-packaging",
+              "code-quality",
+              "web-apis",
+              "ai-agents",
+              "ai-tools",
+              "data-pipelines",
+              "notebooks"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "new",
+              "rising",
+              "stable",
+              "major-update",
+              "experimental",
+              "archived"
+            ]
+          },
+          "first_seen": {
+            "type": "string",
+            "format": "date"
+          },
+          "reviewed_on": {
+            "type": "string",
+            "format": "date"
+          },
+          "license": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["last_release", "release_cadence", "maintenance"],
+            "properties": {
+              "last_release": {"type": "string", "minLength": 1},
+              "release_cadence": {"type": "string", "minLength": 1},
+              "maintenance": {"type": "string", "minLength": 1}
+            }
+          },
+          "ai_familiarity": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1},
+            "uniqueItems": true
+          },
+          "rationale_en": {"type": "string", "minLength": 1},
+          "rationale_zh": {"type": "string", "minLength": 1},
+          "when_not_to_use_en": {"type": "string", "minLength": 1},
+          "when_not_to_use_zh": {"type": "string", "minLength": 1},
+          "risk_en": {"type": "string", "minLength": 1},
+          "risk_zh": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

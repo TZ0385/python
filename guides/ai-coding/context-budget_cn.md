@@ -38,3 +38,7 @@ reviewed_on: 2026-09-02
 ## 4. 严格审查 Git Diff 的副作用
 
 在合并前始终审查代码差异，确保 Agent 没有意外删除重要注释、引入未经审查的依赖或改动全局共享状态。
+
+---
+
+在 [flypython.com](https://flypython.com/learn/zh/ai-coding-context-budget) 继续这个主题：配套的导读路径、前置条件、相关清单与最新审核日期。

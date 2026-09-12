@@ -121,3 +121,7 @@ python examples/mcp-server/verify.py solution
 - [2026-07-28 RC 与破坏性变更概览](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/)
 - [Anthropic：将 MCP 捐给 Agentic AI Foundation](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation)
 - [Agentic AI Foundation 下的 MCP](https://aaif.io/projects/model-context-protocol)
+
+---
+
+在 [flypython.com](https://flypython.com/learn/zh/mcp-2026-07-28-migration) 继续这个主题：配套的导读路径、前置条件、相关清单与最新审核日期。

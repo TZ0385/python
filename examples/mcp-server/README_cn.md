@@ -35,3 +35,7 @@ python examples/mcp-server/verify.py starter
 
 完整的迁移背景（2026-07-28 移除、废弃与强化的内容）见
 [将 Python MCP 服务端迁移到 2026-07-28 规范](../../guides/mcp/migrate-2026-07-28_cn.md)。
+
+---
+
+在 [flypython.com](https://flypython.com/examples/zh/mcp-server) 查看本示例的在线版本：可浏览的任务契约、分步说明与每个示例的当前审核状态。

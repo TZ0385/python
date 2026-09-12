@@ -13,14 +13,14 @@
           "path": "playbooks/add-an-api/README.md",
           "title": "Add or Change a Python API",
           "summary": "Define the public contract first, then implement and verify success, error, and compatibility behavior.",
-          "sha256": "d9efffbe8b88d308cbbef3fdbe278dab711cfc5c055b3208b95be5cf947a1599"
+          "sha256": "75d12e8f14e5d5450fb7eeff10c11d86477758ae46a55fa8954f9105eb26d730"
         },
         {
           "lang": "zh-CN",
           "path": "playbooks/add-an-api/README_cn.md",
           "title": "增加或修改 Python API",
           "summary": "先定义公共契约，再实现并验证成功、错误和兼容性行为。",
-          "sha256": "3b853bb8c24f794001efaf4a62491b597e035757442e31698adb3876dd06d3cd"
+          "sha256": "5c844ed892f4bfa591f11a7be9a329306c3b191b645935fe13bb3a536067b691"
         }
       ]
     },
@@ -36,14 +36,704 @@
           "path": "guides/ai-coding/context-budget.md",
           "title": "Context Budgeting and Bounded Tasks for Coding Agents",
           "summary": "Maximize coding agent accuracy by controlling context size, writing explicit task contracts, and enforcing automated verification loops.",
-          "sha256": "c16c950ea2dbfdc92bd196f911ad339409d2f839beb67b15b8904a24d478c0d2"
+          "sha256": "61f2cb3e8629978ddf69d0e9800b4bafde26467b1e44f8ac26384b9ad10a80cc"
         },
         {
           "lang": "zh-CN",
           "path": "guides/ai-coding/context-budget_cn.md",
           "title": "Coding Agent 上下文预算与精准任务设计",
           "summary": "通过控制上下文体积、编写明确任务契约与建立自动化验证闭环，最大化 Agent 编码准确率。",
-          "sha256": "870e68b9b9acc84316a228302bd47953336756f3b7c88a084461c4bdca0e8ff5"
+          "sha256": "302168b4422f89d79fa38b63c1a49c5691ad170f684f6523df490c2bf2670be6"
+        }
+      ]
+    },
+    {
+      "id": "course-agent-rules",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/agent-rules-single-source/COURSE.md",
+          "title": "One source of truth for agent rules",
+          "summary": "Stop maintaining diverging AGENTS.md, CLAUDE.md, and .cursorrules files — build a checker that proves your repository has exactly one rule source, taught hands-on with your coding agent.",
+          "sha256": "41aaa6f0681ea5a40263dd5372f0d4bf402c947b6727486c4ff5ba7f0a2a9cee"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/agent-rules-single-source/COURSE_cn.md",
+          "title": "Agent 规则的单一真源",
+          "summary": "不再同时维护彼此打架的 AGENTS.md、CLAUDE.md 与 .cursorrules——亲手构建一个能证明仓库只有一处规则真源的检查器，由你的编码 Agent 授课。",
+          "sha256": "5b90d5556cdff097812ef25ab9134b3939f677f6106c162c28ea15f1986091ee"
+        }
+      ]
+    },
+    {
+      "id": "course-agent-rules-l01",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/agent-rules-single-source/lessons/L01.md",
+          "title": "Measure the drift you already have",
+          "summary": "Run the checker against the three scenario repositories and read drift as a test failure, not a vibe.",
+          "sha256": "b3715ca64a0280278b60fddcf59f9142ece10b5b722da4a081266da64a1a8f29"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/agent-rules-single-source/lessons/L01_cn.md",
+          "title": "量化你已经存在的漂移",
+          "summary": "对三个场景仓库运行检查器，把漂移读成测试失败，而不是一种感觉。",
+          "sha256": "c53ddaa62a5d9a5397586ace467360a13d953b4b566b80bdb80ad0715b8fa4ef"
+        }
+      ]
+    },
+    {
+      "id": "course-agent-rules-l02",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/agent-rules-single-source/lessons/L02.md",
+          "title": "Decide the source of truth",
+          "summary": "AGENTS.md becomes the one file agents read; everything else is a pointer or a copy — decide, then write it down.",
+          "sha256": "b694cf2b182c1ef0763284f5ab1387fd03646ce5f89909d082740d4d3a92dcbb"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/agent-rules-single-source/lessons/L02_cn.md",
+          "title": "确定唯一真源",
+          "summary": "AGENTS.md 成为 Agent 唯一阅读的文件；其余都只能是指针或副本——先决定，再写下来。",
+          "sha256": "08f9940d4d3915688b0950ce2f37710dc1ff324d0cb8e00dad383768800cc8bc"
+        }
+      ]
+    },
+    {
+      "id": "course-agent-rules-l03",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/agent-rules-single-source/lessons/L03.md",
+          "title": "Drive a bounded change, test by test",
+          "summary": "Make the starter detect source, pointer, copy, and drift — one failing test group at a time.",
+          "sha256": "fb9635ad80a38a101ece923e7f95b880bb2495c6c1ab1c30bb03df20e2ad3f86"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/agent-rules-single-source/lessons/L03_cn.md",
+          "title": "按测试驱动一次有边界的变更",
+          "summary": "让 starter 依次识别真源、指针、副本与漂移——一次一组失败测试。",
+          "sha256": "e725359f61593cab9562c17aaf77375f253eec56c65267521d92e8fdee64c4cb"
+        }
+      ]
+    },
+    {
+      "id": "course-agent-rules-l04",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/agent-rules-single-source/lessons/L04.md",
+          "title": "Verify and wire it in",
+          "summary": "Prove both verifier directions, run all three skins, then add the checker to your repository's review loop.",
+          "sha256": "d8dca16a66d7edbc0bc69b501b7a811f1783c24ea67525197d3ff6c42dcb03ad"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/agent-rules-single-source/lessons/L04_cn.md",
+          "title": "验证并接入流程",
+          "summary": "证明验证器双向通过、跑完三个皮肤，然后把检查器接入你仓库的审查环。",
+          "sha256": "1cbbfa40c33cf4f26b57f33867530a9f96e74ebb46d3f2f68b24e9996afae4ec"
+        }
+      ]
+    },
+    {
+      "id": "course-agent-rules-l05",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/agent-rules-single-source/lessons/L05.md",
+          "title": "Apply this to your repository",
+          "summary": "One AGENTS.md, thin pointers everywhere else, and a failing check when it breaks.",
+          "sha256": "2ff3c80bde6039c959eecfbb59a476191df88eb8f760101863163e44bf89b930"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/agent-rules-single-source/lessons/L05_cn.md",
+          "title": "把这套方法带回你的仓库",
+          "summary": "一个 AGENTS.md，其余全是瘦指针，一旦破坏检查就失败。",
+          "sha256": "368711f74fe18e4fd05aa5281fad7303735873c84adf089428ea7205578d8dc2"
+        }
+      ]
+    },
+    {
+      "id": "course-claude-code",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-python-with-claude-code/COURSE.md",
+          "title": "Hands-on Python with Claude Code",
+          "summary": "An agent-taught course that takes you from a cloned folder to a tested, verified Python report tool using Claude Code — including the task contract, the bounded change, and the objective pass/fail evidence.",
+          "sha256": "048b8f210dedc9d60bffb98a8347c89586295e5be3c16abd6be20ea50ef48563"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-python-with-claude-code/COURSE_cn.md",
+          "title": "用 Claude Code 实战 Python",
+          "summary": "一门由 Agent 授课的课程：从下载课程文件夹到交付一个经过测试与验证的 Python 报表工具——包括任务契约、最小变更和客观的通过/失败证据。",
+          "sha256": "96c3287051153c42678be558538b9be16cc9835296fc8947711e48ea6ee0a145"
+        }
+      ]
+    },
+    {
+      "id": "course-claude-code-l01",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-python-with-claude-code/lessons/L01.md",
+          "title": "Lesson 1: Reproduce the failure before you fix anything",
+          "summary": "Clone the folder, meet the starter, and make the failure objective with verify.py — the habit that separates \"it runs\" from \"it ships\".",
+          "sha256": "a656786d609451d091cb7102ce772129f03f72621cd9fdf69971cd92f5a8c9f0"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-python-with-claude-code/lessons/L01_cn.md",
+          "title": "第 1 课：先复现故障，再谈修复",
+          "summary": "打开课程文件夹，认识 starter，用 verify.py 把\"坏了\"变成客观证据——这是\"能跑\"与\"能交付\"的分水岭。",
+          "sha256": "0e71651ac6eb147f097dd73580737f395e9e503836f0e717552321104e78194f"
+        }
+      ]
+    },
+    {
+      "id": "course-claude-code-l02",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-python-with-claude-code/lessons/L02.md",
+          "title": "Lesson 2: Write the task contract before the change",
+          "summary": "Turn \"make it better\" into a bounded, testable contract — the single highest-leverage skill for working with coding agents.",
+          "sha256": "db129009f1c31b42ab24cd50fcf0c40af5a76b3666a4bc2d5658e93edf189c60"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-python-with-claude-code/lessons/L02_cn.md",
+          "title": "第 2 课：动手之前先写任务契约",
+          "summary": "把\"优化一下\"变成有边界、可测试的契约——这是与编码 Agent 协作杠杆最大的一项技能。",
+          "sha256": "7de904a5c30c22d8e6ea1131362acf3165a4c00de1c7cb6ce8ed33d0188040b0"
+        }
+      ]
+    },
+    {
+      "id": "course-claude-code-l03",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-python-with-claude-code/lessons/L03.md",
+          "title": "Lesson 3: Drive a bounded change, test by test",
+          "summary": "Let the agent edit the starter under contract — smallest change, no new dependencies, red to green one group at a time.",
+          "sha256": "8e63e213c5d468b44a408db8bf073df0d08521f8992692e119c400dfe941d0b3"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-python-with-claude-code/lessons/L03_cn.md",
+          "title": "第 3 课：按测试驱动一次有边界的变更",
+          "summary": "让 Agent 在契约约束下修改 starter——最小变更、不新增依赖、一次一组测试从红到绿。",
+          "sha256": "4461653553377397093638a9cbbf00307850e888f3ddefd67aa263e3f9cc9790"
+        }
+      ]
+    },
+    {
+      "id": "course-claude-code-l04",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-python-with-claude-code/lessons/L04.md",
+          "title": "Lesson 4: Verify like an engineer, review like a skeptic",
+          "summary": "Run the full verification loop, review the agent's diff for scope and side effects, and record what you did — and did not — prove.",
+          "sha256": "1c2dbe9a11a6be470b08f372ba7ea9d69e2eb6c61e024e5f4533392b3147be1b"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-python-with-claude-code/lessons/L04_cn.md",
+          "title": "第 4 课：像工程师一样验证，像怀疑者一样审查",
+          "summary": "跑完整验证闭环，审查 Agent 的 diff 是否越界、有无副作用，并如实记录证明了什么、没证明什么。",
+          "sha256": "7ba1dbf7e0916a6c8033842c046332ad5848f4d8afdf11630280c4633029a5ea"
+        }
+      ]
+    },
+    {
+      "id": "course-claude-code-l05",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-python-with-claude-code/lessons/L05.md",
+          "title": "Lesson 5: Apply this to your own project",
+          "summary": "Port the workflow — not the code — to one script you own: contract, isolation, rounding, atomic writes, and an honest verification record.",
+          "sha256": "01eac90312497edababdbefb0272c5eb56f0a1598fe649459dfdb95a51efcf1e"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-python-with-claude-code/lessons/L05_cn.md",
+          "title": "第 5 课：把这套方法带回你自己的项目",
+          "summary": "迁移工作流——而不是代码——到你拥有的一个脚本上：契约、错误隔离、舍入、原子写入，以及一份诚实的验证记录。",
+          "sha256": "3cccbcd3e3a1d24558e2a64800b22a87f34059ffcbe6b5f89b97a0d36175aebf"
+        }
+      ]
+    },
+    {
+      "id": "course-codex-cli",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-openai-codex-cli/COURSE.md",
+          "title": "Hands-on with OpenAI Codex CLI",
+          "summary": "The same verified Python workflow as the Claude Code course — task contract, bounded change, objective verify.py evidence — taught hands-on with the OpenAI Codex CLI instead.",
+          "sha256": "aa223ff4356ab25c32f55344362a5133fcba0f25851e05c6bd3c6bde9189a8aa"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-openai-codex-cli/COURSE_cn.md",
+          "title": "OpenAI Codex CLI 实战",
+          "summary": "与 Claude Code 课程相同的已验证 Python 工作流——任务契约、最小变更、客观 verify.py 证据——改用 OpenAI Codex CLI 完成实战。",
+          "sha256": "4a31ae97c205ee1e28008f1149aadf1488d4d305176678da1c475475174944d5"
+        }
+      ]
+    },
+    {
+      "id": "course-codex-cli-l01",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L01.md",
+          "title": "Lesson 1: Reproduce the failure with Codex in the loop",
+          "summary": "Run the verifier both ways, map each failing test to a real-world failure class, and learn how to hand the folder to Codex.",
+          "sha256": "794fc25625913718bdca8bf4ad71d5528d8a05b818e677002988b155087a9332"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L01_cn.md",
+          "title": "第 1 课：让 Codex 进环，先复现故障",
+          "summary": "双向运行验证器，把每个失败测试对应到真实故障，并学会如何把文件夹交给 Codex。",
+          "sha256": "03b91470fcf864bbf80dc4846f7b8cb1673a47623158af776698df1cf980e76f"
+        }
+      ]
+    },
+    {
+      "id": "course-codex-cli-l02",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L02.md",
+          "title": "Lesson 2: Write the task contract before the change",
+          "summary": "Turn \"make it better\" into bounded, testable statements — the single highest-leverage skill for driving Codex.",
+          "sha256": "61411a5da9baa192923d38c2db052380663179b0c2246196ae2d0cea0a70e10f"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L02_cn.md",
+          "title": "第 2 课：动手之前先写任务契约",
+          "summary": "把“优化一下”变成有边界、可测试的陈述——驱动 Codex 杠杆最大的一项技能。",
+          "sha256": "92f68d255ed3a6f68a1c3357772467e1e26dfbc75664eb88b35d7d8ca13752a6"
+        }
+      ]
+    },
+    {
+      "id": "course-codex-cli-l03",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L03.md",
+          "title": "Lesson 3: Drive a bounded change, test by test",
+          "summary": "Supervise Codex through seven small diffs — smallest change, no new dependencies, one failing test group at a time.",
+          "sha256": "50bf8c5bab11827612da38a6ff2aa56011a6db119504d8a1fe2a1ee5fc2e82b1"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L03_cn.md",
+          "title": "第 3 课：按测试驱动一次有边界的变更",
+          "summary": "监督 Codex 完成七个小 diff——最小变更、不新增依赖、一次一组失败测试。",
+          "sha256": "e71a0c9f87a5f8e7f04afcbeddc89fb135f4bfb3887dcd3eb0fb1f5d4132c831"
+        }
+      ]
+    },
+    {
+      "id": "course-codex-cli-l04",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L04.md",
+          "title": "Lesson 4: Verify like an engineer, review like a skeptic",
+          "summary": "Complete the evidence loop — both verification directions, all three skins, a scope-creep diff review, and a written record of what is not proven.",
+          "sha256": "a300024f50ac832903ea4336268f53973cfec1b3192f5739e9d140f68a8bbd51"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L04_cn.md",
+          "title": "第 4 课：像工程师一样验证，像怀疑者一样审查",
+          "summary": "完成证据闭环——双向验证、三个皮肤、范围蔓延 diff 审查，以及一份写明未证明内容的记录。",
+          "sha256": "43aef97d44143ac7f95ecaa63c7027fd1b63096c6def6d19bc62f59a6642d223"
+        }
+      ]
+    },
+    {
+      "id": "course-codex-cli-l05",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L05.md",
+          "title": "Lesson 5: Apply this to your own project",
+          "summary": "Port the workflow — not the code — to one script you own, with tests, a verify command, and honest limits.",
+          "sha256": "f70eae4fb1e1c367fe95001a89d77aa32e2c58470c26c2571777773e3189611e"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-openai-codex-cli/lessons/L05_cn.md",
+          "title": "第 5 课：把这套方法带回你自己的项目",
+          "summary": "迁移工作流——而不是代码——到你拥有的一个脚本上，附测试、验证命令与诚实的局限说明。",
+          "sha256": "2357b697ae279590bfb4ab268fb241918ce2075ffe7c704bcf6975a39b6b9725"
+        }
+      ]
+    },
+    {
+      "id": "course-mcp-tools",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/mcp-server-in-python/COURSE.md",
+          "title": "Give your agent tools with MCP (Python)",
+          "summary": "Build a stateless Model Context Protocol tool server in pure Python — JSON-RPC 2.0 dispatch, schema validation, error isolation, and the 2026-07-28 input_required round-trip — and learn where a real tool belongs.",
+          "sha256": "bab5f79922a15ac52c736a549bc69a392718fff274e20cae0ad7c3428e00c4f6"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/mcp-server-in-python/COURSE_cn.md",
+          "title": "用 MCP 给你的 Agent 装上工具（Python）",
+          "summary": "用纯 Python 构建一个无状态的 Model Context Protocol 工具服务——JSON-RPC 2.0 分发、schema 校验、错误隔离与 2026-07-28 的 input_required 多轮交互——并理解真正的工具该放在哪里。",
+          "sha256": "a11236fcd046e9e84e54b22ebcce7e01b925ef71f12014ebb1f1b8bcb536cb63"
+        }
+      ]
+    },
+    {
+      "id": "course-mcp-tools-l01",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/mcp-server-in-python/lessons/L01.md",
+          "title": "What MCP actually is (2026-07-28)",
+          "summary": "A stateless JSON-RPC 2.0 surface for tools — no handshake, no sessions, versions in _meta.",
+          "sha256": "924927db6a228cd32a4d877d8fde864b744ec073627fd6ab5733da497ff38da7"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/mcp-server-in-python/lessons/L01_cn.md",
+          "title": "MCP 到底是什么（2026-07-28）",
+          "summary": "一个面向工具的无状态 JSON-RPC 2.0 接口——无握手、无会话、版本放在 _meta 里。",
+          "sha256": "2e2c472022dd519a9fa483ff7c5fe5002689343d41ff3d244c598486e0d1fb65"
+        }
+      ]
+    },
+    {
+      "id": "course-mcp-tools-l02",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/mcp-server-in-python/lessons/L02.md",
+          "title": "The JSON-RPC dispatch contract",
+          "summary": "Valid requests echo their id; invalid ones get -32600; unknown or removed methods get -32601.",
+          "sha256": "a00b09ff972a0cb0a6c5b0a5e825b33a06ce2f203fc3c820883ead6cdf9e709f"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/mcp-server-in-python/lessons/L02_cn.md",
+          "title": "JSON-RPC 分发契约",
+          "summary": "合法请求回显 id；非法请求得 -32600；未知或已移除的方法得 -32601。",
+          "sha256": "5f1abed1d4afcfb0f503ee509caf2a4d84057b4555570327e3250ca72ad43b51"
+        }
+      ]
+    },
+    {
+      "id": "course-mcp-tools-l03",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/mcp-server-in-python/lessons/L03.md",
+          "title": "Validation and error isolation",
+          "summary": "Arguments are untrusted input: validate before execution, and never let a handler crash the transport.",
+          "sha256": "e99e4ea8ef604a61fda45123310a32bb694e3679dfa59fb03eca58bd7630cfe3"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/mcp-server-in-python/lessons/L03_cn.md",
+          "title": "校验与错误隔离",
+          "summary": "参数是不可信输入：先校验再执行，绝不让处理函数打断传输。",
+          "sha256": "7334b29f5e9fd2f76e0e068ab40e9a6e5a6f95c6bed7d6460f708d17ec0b9624"
+        }
+      ]
+    },
+    {
+      "id": "course-mcp-tools-l04",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/mcp-server-in-python/lessons/L04.md",
+          "title": "The input_required round-trip",
+          "summary": "A tool can ask the client a question mid-call — return the requests, finish on the retry carrying answers.",
+          "sha256": "598872d0d8282e23c8ac6bc0b099068c1ae1c31c5dd51531b2edfefcd06193d2"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/mcp-server-in-python/lessons/L04_cn.md",
+          "title": "input_required 多轮交互",
+          "summary": "工具可以在调用中途向客户端提问——先返回问题，客户端带答案重试后完成。",
+          "sha256": "d33ef0588464d205c4f2c2d613726b055c27ab93938885403d1dd4b489575953"
+        }
+      ]
+    },
+    {
+      "id": "course-mcp-tools-l05",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/mcp-server-in-python/lessons/L05.md",
+          "title": "Expose one real tool to your agent",
+          "summary": "Wrap one function you actually own behind the validated, isolated boundary you just built.",
+          "sha256": "2df2f206f30f330d752dc9d640005cc641068a6ff93087de1a58208f86814824"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/mcp-server-in-python/lessons/L05_cn.md",
+          "title": "给你的 Agent 暴露一个真实工具",
+          "summary": "把你真正拥有的一个函数包进刚建好的“校验 + 隔离”边界。",
+          "sha256": "071a2a276f66587e7759b644d8d7bdad9704159cc00ad9b00b1f5ce9d563ecce"
+        }
+      ]
+    },
+    {
+      "id": "course-verify-ship",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/verifying-ai-generated-code/COURSE.md",
+          "title": "From \"it runs\" to \"it ships\": verifying AI-generated code",
+          "summary": "Build the release-evidence machine your AI-written project is missing — a ship check that runs the tests, parses what actually ran, refuses zero-test projects, and writes an honest delivery record.",
+          "sha256": "7765ea8ad032cc16eb5d34b0f65401c28c8c56cc1f44c496c9cc298f44cb7cd3"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/verifying-ai-generated-code/COURSE_cn.md",
+          "title": "从「能跑」到「能上线」：验证 AI 写的代码",
+          "summary": "为你的 AI 项目补上缺失的发布证据机器——一个 ship check：运行测试、解析实际跑了什么、拒绝零测试项目，并写出诚实的交付记录。",
+          "sha256": "55eda6add807fff2147c7829da190e8c7cdfdbb537d3dcfdb85b461e2c0a21f2"
+        }
+      ]
+    },
+    {
+      "id": "course-verify-ship-l01",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/verifying-ai-generated-code/lessons/L01.md",
+          "title": "\"It runs\" is not evidence",
+          "summary": "Watch the starter bless a project with no tests and a project with a failing one — then want better.",
+          "sha256": "c2451b1742453e323783274762ba8f24d7c7b7cdee6e1d44c1190a90a64ea4de"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/verifying-ai-generated-code/lessons/L01_cn.md",
+          "title": "“能跑”不是证据",
+          "summary": "看着 starter 给零测试的项目和有失败的项目都盖章放行——然后想要更好的东西。",
+          "sha256": "c7ff8699b8b2742cc816dad7766f1f8f78a35a29b7849348fdaad6c450d5bab6"
+        }
+      ]
+    },
+    {
+      "id": "course-verify-ship-l02",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/verifying-ai-generated-code/lessons/L02.md",
+          "title": "Define what a release record must prove",
+          "summary": "Command, exit code, parsed count and outcome, an unverified list, and a verdict that refuses zero-test projects.",
+          "sha256": "d23b88834f0711e03a2df77248af424e900046644cb29d406e6291ddd1234ba0"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/verifying-ai-generated-code/lessons/L02_cn.md",
+          "title": "定义发布记录必须证明什么",
+          "summary": "命令、退出码、解析出的数量与结果、一份未验证清单，以及一个拒绝零测试项目的判定。",
+          "sha256": "05fed47a2fb74f6b846a266e89996b2c3fc5b2174441116a41180c821b769c09"
+        }
+      ]
+    },
+    {
+      "id": "course-verify-ship-l03",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/verifying-ai-generated-code/lessons/L03.md",
+          "title": "Build the ship check, test by test",
+          "summary": "Parsing, verdicts, the unverified list, atomic writes, exit codes — one failing group at a time.",
+          "sha256": "35765f560c3731ae16b528bf3a26536fe230e6aadaf489bddae75c64a9ac1534"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/verifying-ai-generated-code/lessons/L03_cn.md",
+          "title": "按测试逐组构建 ship check",
+          "summary": "解析、判定、未验证清单、原子写入、退出码——一次一组失败测试。",
+          "sha256": "531c9d179998179b2117ac7529c0a62947725f250c2f5a1a2aed5dee623fe912"
+        }
+      ]
+    },
+    {
+      "id": "course-verify-ship-l04",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/verifying-ai-generated-code/lessons/L04.md",
+          "title": "Read the record like a skeptic",
+          "summary": "Green, red, and no-tests mean different things — prove you can tell them apart and say what the record does not prove.",
+          "sha256": "e2ba3f5f6b3aec97670db1126bf3cf4dadc571b1391b5bc652b681e7f7c16dd3"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/verifying-ai-generated-code/lessons/L04_cn.md",
+          "title": "像怀疑者一样读记录",
+          "summary": "绿、红、零测试是三件不同的事——证明你能分辨，并说清记录不能证明什么。",
+          "sha256": "8bf33d1729279903ef5ee093dba5f95dc13c594e8da9d8c4598aa7420b64c582"
+        }
+      ]
+    },
+    {
+      "id": "course-verify-ship-l05",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/verifying-ai-generated-code/lessons/L05.md",
+          "title": "Gate your next release",
+          "summary": "Take the ship check to a project you own and make the record part of shipping.",
+          "sha256": "c11972691e935d17cf7266c9f1cc75a3c38720b0eb025cb4abcd7bb5f2020848"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/verifying-ai-generated-code/lessons/L05_cn.md",
+          "title": "给你的下一次发布装上门禁",
+          "summary": "把 ship check 带到你自己的项目，让记录成为交付的一部分。",
+          "sha256": "126d8c70c068e5dfcc33f2e03f041878efc1bb085b7abe40293c8ee92557634f"
         }
       ]
     },
@@ -59,14 +749,14 @@
           "path": "examples/async-fetcher/README.md",
           "title": "Async Batch Fetcher with Bounded Concurrency and Retries",
           "summary": "Implement a resilient async task batcher with Semaphore concurrency control, exponential backoff, and error isolation.",
-          "sha256": "ba13c77cb8303fdf718f5fc87a9def3c913797d2e62d1f39360a3deafcc24a3d"
+          "sha256": "1a309f791eb6b17b5323b59ddd8f5f27c6039751de6cb7c51df607cdd8e0ffd9"
         },
         {
           "lang": "zh-CN",
           "path": "examples/async-fetcher/README_cn.md",
           "title": "带受控并发与重试的异步抓取器",
           "summary": "使用 Semaphore 信号量控制并发、指数退避重试与错误隔离，实现韧性异步任务批处理。",
-          "sha256": "13ecde2237d10509cf6c12b8ca1804a12fa89557eef3b88fc317b7fdb2435c76"
+          "sha256": "ee9a13cb4756abe75a19e28ba3b2ce837764f24dfdce1064e9bff765a139fcce"
         }
       ]
     },
@@ -82,14 +772,14 @@
           "path": "examples/mcp-server/README.md",
           "title": "Model Context Protocol (MCP) Tool Server",
           "summary": "Build a stateless 2026-07-28 MCP tool server with JSON-RPC 2.0 dispatch, no initialize handshake, schema validation, error isolation, and the input_required round-trip.",
-          "sha256": "989d76f36d383a73fde46c5e9a88df6efc6466b44f1b7a867c0745d1bdb1a0d6"
+          "sha256": "bab7ca867883f2380acb131351634462ceacfcb397e2b6758f0ee460d3f977ab"
         },
         {
           "lang": "zh-CN",
           "path": "examples/mcp-server/README_cn.md",
           "title": "Model Context Protocol (MCP) 工具服务",
           "summary": "构建符合 2026-07-28 无状态规范的 MCP 工具服务，实现无需 initialize 握手的 JSON-RPC 2.0 分发、参数校验、错误隔离与 input_required 多轮交互。",
-          "sha256": "e29cb70049b5bc5220226ab411b75c7a898242a061490a88fa1d7ef8ca7e9fa1"
+          "sha256": "03a6ec203daa98ee6af75a6bda99e9297e278424b6b813480b1bcfb42cc1c347"
         }
       ]
     },
@@ -105,14 +795,14 @@
           "path": "examples/pydantic-validation/README.md",
           "title": "Validate Untrusted Boundary Payloads",
           "summary": "Parse, sanitize, and validate messy external payloads with field normalization and structured error contracts.",
-          "sha256": "8afecd11555872f344a09ae3d62ce12dae3247eab733ed51345f3a25206845ee"
+          "sha256": "99e3fedc6e47fd915a24198cbe166ddafd51e4b6d3a4c7f1929bd56b2d27efa9"
         },
         {
           "lang": "zh-CN",
           "path": "examples/pydantic-validation/README_cn.md",
           "title": "验证不可信边界请求体",
           "summary": "使用字段规范化与结构化错误契约，清洗并验证混乱的外部数据载荷。",
-          "sha256": "75d9d1c4ff41306b8448a219cbb0c882d57cb56f7b0a52ef4341d567f093685d"
+          "sha256": "1e0f741e16df66623d58b6a9c0bf5128ebfc6fc9fe219f5287a683f647c232b6"
         }
       ]
     },
@@ -128,14 +818,14 @@
           "path": "playbooks/fix-a-bug/README.md",
           "title": "Fix a Python Bug with a Regression Test",
           "summary": "Reproduce the behavior, constrain the cause, make the smallest fix, and prove the regression stays fixed.",
-          "sha256": "14936929bae9110e0769102ba6b09da86f281accfcc3a7fa05f9435206f228ac"
+          "sha256": "1b97bcb5a4fd2fe8dc5863dce80555459a1e359732a710990107e66c492028b2"
         },
         {
           "lang": "zh-CN",
           "path": "playbooks/fix-a-bug/README_cn.md",
           "title": "用回归测试修复 Python Bug",
           "summary": "复现行为、缩小原因、完成最小修复，并证明回归问题不会再次出现。",
-          "sha256": "34484371bb774ccf45a4e54a53d957eef5a9e76db815923d8e30736da45b0a18"
+          "sha256": "cc770168300aa25cd4e42a00a7157a06aaf9a4c713678effdeb6b737a94e865f"
         }
       ]
     },
@@ -151,14 +841,14 @@
           "path": "playbooks/integrate-an-external-api/README.md",
           "title": "Integrate an External API",
           "summary": "Wrap a third-party API behind a typed boundary with safe credentials, timeouts, retries, and deterministic tests.",
-          "sha256": "3424fcdceb5dd256895106e3f8eed94765b4892b7fc1c935604b2d86b2f9efcb"
+          "sha256": "412f1185e8e456b921ba284e898419bb35ae3bfb520cdc3663897506244f6cef"
         },
         {
           "lang": "zh-CN",
           "path": "playbooks/integrate-an-external-api/README_cn.md",
           "title": "接入外部 API",
           "summary": "用类型边界封装第三方 API，并安全处理凭据、超时、重试和确定性测试。",
-          "sha256": "bf6466c0f044221392ed9d74091fb60363dbb6fc5a3eb6e875d724d0f30e4d4c"
+          "sha256": "900582abc309374ecc190b29c117208a09bbd55e136f1adcc6d95ecac04114a4"
         }
       ]
     },
@@ -174,14 +864,14 @@
           "path": "playbooks/manage-database-migrations/README.md",
           "title": "Manage Database Schema Migrations",
           "summary": "Plan, execute, and verify reversible database migrations with zero-downtime compatibility and rollback safety.",
-          "sha256": "efb8820374e6369565e1d376e81f5c4b0d6382259faf13a76277d1db3bca1da1"
+          "sha256": "82a62d3172e28bf98a32a2a3df8f1ba2e054df83264479258b789e13d95428ba"
         },
         {
           "lang": "zh-CN",
           "path": "playbooks/manage-database-migrations/README_cn.md",
           "title": "管理数据库架构迁移",
           "summary": "规划、执行并验证具备零停机兼容性与回滚安全性的可逆数据库迁移。",
-          "sha256": "f9bc0131fcadc6f3a07ffd5df2c5adc13eb291845599d46dcd0ddacf5fdaec68"
+          "sha256": "5458037a8359c85aa16abe22696a21054e040f04bdc51a0c1dda4304e4585d8a"
         }
       ]
     },
@@ -197,14 +887,14 @@
           "path": "guides/mcp/migrate-2026-07-28.md",
           "title": "Migrate a Python MCP server to the 2026-07-28 specification",
           "summary": "Update a Python MCP server for the stateless 2026-07-28 specification by removing the initialize handshake, adopting the input_required round-trip, dropping deprecated features, and hardening authorization.",
-          "sha256": "47a96d64e7f2a86c39fcc716b1e65527961256ae44cb79e2817a13c3eb7feaa2"
+          "sha256": "3e64c297b0449769d42b00302e8c20d24f470999f3360b1219927da4264f310f"
         },
         {
           "lang": "zh-CN",
           "path": "guides/mcp/migrate-2026-07-28_cn.md",
           "title": "将 Python MCP 服务端迁移到 2026-07-28 规范",
           "summary": "面向 2026-07-28 无状态规范更新 Python MCP 服务端，移除 initialize 握手、采用 input_required 多轮交互、放弃废弃特性并强化授权。",
-          "sha256": "bb9eb48393dccc469b6ffcdd52248e82d71daf85dd9b891d00b3adf9b8027425"
+          "sha256": "cc5360996f1d45cd8155dd1a0cd7a6c418d988247c54ba31ca0d5efaa1e81c8f"
         }
       ]
     },
@@ -220,14 +910,14 @@
           "path": "examples/product-slug/README.md",
           "title": "Three-minute AI-coding change",
           "summary": "Reproduce a Python text-boundary bug, make a bounded fix, and verify it with the standard library.",
-          "sha256": "b826e674fd150ab442dede1d27333a01ecb228eb5c2cec4e631f803a86d61c5c"
+          "sha256": "8f240817e26384924c624ce4cc2e563fe17909d60e179d647f33b97a61f8b2b5"
         },
         {
           "lang": "zh-CN",
           "path": "examples/product-slug/README_cn.md",
           "title": "3 分钟完成一次 AI Coding 修改",
           "summary": "复现 Python 文本边界 Bug，完成范围明确的修复，并只用标准库验证结果。",
-          "sha256": "2e871dbbe21ad845c7e8e6c2a4b6634f020b23238e2da622ca8ee282a45d018f"
+          "sha256": "698ae339a14f4b56b59accd1a03eb29028b663495613b2bfb6fff2ae8663ed0b"
         }
       ]
     },
@@ -243,14 +933,14 @@
           "path": "guides/ai-coding/workflow.md",
           "title": "Use Python Well with AI Coding",
           "summary": "A contract-first workflow for using coding agents to make small, testable, and safe Python changes.",
-          "sha256": "7d99719b0b434161e43401f91217e6df5393d182ad2da87eff059fa58d17a09a"
+          "sha256": "aa29ed9752b83991f93a5a4c7d5282a514c67cf4108d56c147ea2d6a970c0fd9"
         },
         {
           "lang": "zh-CN",
           "path": "guides/ai-coding/workflow_cn.md",
           "title": "用 AI Coding 写好 Python",
           "summary": "一套契约优先的工作方法，用 coding agent 完成小而可测、能够安全交付的 Python 修改。",
-          "sha256": "bbe4a1872736bcb81b5c47a65e186266d228beaf067c5d341eca791ba872e9f7"
+          "sha256": "5e3e4534f557a37321ab9e1eb795bfff1a36d2577e544ccd1c23f12ed1c38860"
         }
       ]
     },
@@ -266,14 +956,14 @@
           "path": "guides/python-engineering/async-patterns.md",
           "title": "Reliable Async Python Patterns and Pitfalls",
           "summary": "Build resilient concurrent Python applications by avoiding common async antipatterns and managing task lifecycles.",
-          "sha256": "f3f3c8980e0022b0349ddd7f90732bc36e7cd702d4662f77fb85351e34841450"
+          "sha256": "b883d9dcc72ac355812a6880592c1913eff34cd0d1b48617b004c3bf22248000"
         },
         {
           "lang": "zh-CN",
           "path": "guides/python-engineering/async-patterns_cn.md",
           "title": "异步 Python 可靠模式与避坑指南",
           "summary": "通过避免常见异步反模式与规范管理任务生命周期，构建高韧性的并发 Python 应用。",
-          "sha256": "f292b703593c66c408467cf5aa3c230ed37e0d58151c41505c057642a900d671"
+          "sha256": "614ac9617cc77b94ba8030a9c6490b862b83d2e4bf8c7679109f6c6cd67113ed"
         }
       ]
     },
@@ -289,14 +979,14 @@
           "path": "guides/python-engineering/modern-typing.md",
           "title": "Modern Python Typing in Practice",
           "summary": "Use explicit Python types as machine-checkable contracts for reliable AI-assisted engineering.",
-          "sha256": "ae7c6b003704066069ba32d929ee9a6a1682898681200d5da1713987947aed8a"
+          "sha256": "fa69b55d3b122c5086e1836d4404c3b34181608fabe9a4345751040a2b03a54f"
         },
         {
           "lang": "zh-CN",
           "path": "guides/python-engineering/modern-typing_cn.md",
           "title": "现代 Python 类型系统实战",
           "summary": "将明确的 Python 类型作为机器可读的契约，指导可靠的 AI 辅助编程与工程交付。",
-          "sha256": "2f9912b1479c4594910e8bfae15783fe7f4a164ee9c414a8429708bb201cdd8f"
+          "sha256": "1fb7f63ea5675d58102c3d8178d1ffbf9720e69ebf9083036372ae1ddedeabab"
         }
       ]
     },
@@ -312,14 +1002,14 @@
           "path": "guides/python-engineering/product-quality.md",
           "title": "Build a Python Product That Can Be Changed Safely",
           "summary": "A practical quality model for moving from a useful script to an operable Python product.",
-          "sha256": "3df02b7151a9d2c513fa2498a91974621c1832e59d60942735b218504111db67"
+          "sha256": "6ab42b0a271d22c4c250e33d4d76d2a441f2b3c258ec253c36bfc2ddb308f0fd"
         },
         {
           "lang": "zh-CN",
           "path": "guides/python-engineering/product-quality_cn.md",
           "title": "构建能够持续修改的 Python 产品",
           "summary": "从有用脚本走向可运行、可维护 Python 产品的一套实用质量模型。",
-          "sha256": "d45aafe9d51a0e21e2af5f84857efc43cf9987f86ebe6b5b0313152914deced7"
+          "sha256": "94fce6390a97e84e65628bf77b4ae6c560ef726879464e4a68adf4326f0c5891"
         }
       ]
     },
@@ -335,14 +1025,14 @@
           "path": "playbooks/setup-structured-logging/README.md",
           "title": "Set Up Production Structured Logging",
           "summary": "Configure structured JSON logging with context propagation, sensitive data redaction, and environment isolation.",
-          "sha256": "192b0c083b34c5656c611a9db5da09af682bf1bb9e79a4d2ee7c049681ae078c"
+          "sha256": "9ef0a7edc6a4d08c2c216706a29ada10f677bc08c516f5c5dca7161b4204167e"
         },
         {
           "lang": "zh-CN",
           "path": "playbooks/setup-structured-logging/README_cn.md",
           "title": "搭建生产级结构化日志",
           "summary": "配置具备上下文贯穿、敏感数据脱敏与环境隔离的 JSON 结构化日志体系。",
-          "sha256": "53291eb05225349ddb6705673bdafd233e2e113df67755d5edac662a858a3926"
+          "sha256": "a1f9fd0417c8d1f51a272e0b4f6fd5f0d401f505d84887ae7ee2c5343706af11"
         }
       ]
     },
@@ -358,14 +1048,14 @@
           "path": "playbooks/ship-a-release/README.md",
           "title": "Ship a Python Release",
           "summary": "Produce a traceable package or service release and verify the real deployed behavior and rollback path.",
-          "sha256": "b078b641f74d35d6fa679327b6e086951ed17657a3ed7254d4963358c7c8460e"
+          "sha256": "8c9b410dbfc088ac8abba7f44cd87463d3d829a81801717f61b80069bbeb54b7"
         },
         {
           "lang": "zh-CN",
           "path": "playbooks/ship-a-release/README_cn.md",
           "title": "发布 Python 版本",
           "summary": "交付可追踪的包或服务版本，并验证真实线上行为与回退路径。",
-          "sha256": "857b99331cdfd08aca6c9b10bbd05425037279ea0a98b9aad8026c3fe7d8cc5a"
+          "sha256": "faa5387b7a6f394f22a16d4d4f4a3aaaeb4766018eb6c7a086c2533f7af5b8e9"
         }
       ]
     },
@@ -381,14 +1071,14 @@
           "path": "examples/structured-pipeline/README.md",
           "title": "Resilient batch data pipeline",
           "summary": "Build an isolated, bounded data batch processing pipeline with error recovery using the standard library.",
-          "sha256": "366cb8a04f17b1f5f80d49889cc4268b7a941e31d789f784b0c5f0b54eb158dd"
+          "sha256": "cbfe3b304da301b503229a4043092eea39e5ca531049fb074b672c64e2ea7cb6"
         },
         {
           "lang": "zh-CN",
           "path": "examples/structured-pipeline/README_cn.md",
           "title": "鲁棒批处理数据流水线",
           "summary": "使用标准库实现具备错误隔离、类型校验与批处理统计的鲁棒数据流水线。",
-          "sha256": "21b24d351993b947cde9a36c147a4111690204de858cb07f25436d57853f3dd8"
+          "sha256": "be0baacb411a0d0661da5b24136343cb26b862d3aaeb39ab8b603cc7598f8cbc"
         }
       ]
     },
@@ -404,14 +1094,14 @@
           "path": "playbooks/upgrade-dependencies/README.md",
           "title": "Upgrade Python Dependencies",
           "summary": "Upgrade dependencies in a bounded change with lockfile, compatibility, security, and runtime evidence.",
-          "sha256": "ce8f11dc5371a004fb22f7b1823e58926c34358d9003ace1818f88eb83498680"
+          "sha256": "d4a7f7e5972e3a6cc953a1d07475a8064ae2d6df0c47b24296584246b67584b1"
         },
         {
           "lang": "zh-CN",
           "path": "playbooks/upgrade-dependencies/README_cn.md",
           "title": "升级 Python 依赖",
           "summary": "在边界明确的修改中，用锁文件、兼容性、安全和运行证据完成依赖升级。",
-          "sha256": "48e6c7ed41e2d51ac087d801b189616cc6f27e14db3f4e1b9498f7a4d4f9e2da"
+          "sha256": "755df574181670b18a6ddbd1a24d2949b0a56c31790109e1d26aa4b6bdffdf27"
         }
       ]
     },
@@ -427,14 +1117,14 @@
           "path": "playbooks/write-llm-evals/README.md",
           "title": "Write Deterministic Evals for LLMs and Agents",
           "summary": "Build regression test suites for LLM prompt changes and tool-calling agents with golden datasets and schema assertions.",
-          "sha256": "1d047d98d304b05696daf0bd437509eb6090d52907d6579fc72144c255f02b64"
+          "sha256": "d96648fa2e4a3a5c73bf6a83ea853f9b4757416823b05c088d03354c9ed4d5b1"
         },
         {
           "lang": "zh-CN",
           "path": "playbooks/write-llm-evals/README_cn.md",
           "title": "为大模型与 Agent 编写确定性评测",
           "summary": "结合黄金测试集与 Schema 断言，为 Prompt 调整与工具调用 Agent 构建防劣化回归测试套件。",
-          "sha256": "a46889efd6019759cdb839470d222e9b94d4aa9ac4f9e3f80bcc8d096db77b28"
+          "sha256": "516a779f37b4f36b86be0807125f391bf08d6ea7d9270969e609331ca153c0e2"
         }
       ]
     }

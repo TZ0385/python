@@ -1,0 +1,4 @@
+{
+  "command": ["-m", "unittest", "discover", "-s", "tests"],
+  "unverified": ["behavior on production data volume", "upstream schema stability"]
+}

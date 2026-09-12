@@ -28,3 +28,7 @@ ask it to fix only `starter/validator.py`, and run:
 ```bash
 python examples/pydantic-validation/verify.py starter
 ```
+
+---
+
+See this example on [flypython.com](https://flypython.com/examples/pydantic-validation): the browsable contract, step-by-step walkthrough, and current review state.

@@ -27,3 +27,7 @@ reviewed_on: 2026-09-02
 
 Practice the complete loop with the
 [product slug example](../../examples/product-slug/README.md).
+
+---
+
+Continue this task on [flypython.com](https://flypython.com/resources#fix-a-bug-with-regression-test): the full playbook directory, the guide behind each checklist, and the reviewed source catalog.

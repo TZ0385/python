@@ -9,7 +9,7 @@ from typing import Any
 
 import yaml
 
-CONTENT_GLOBS = ("guides/**/*.md", "playbooks/**/*.md", "examples/**/*.md")
+CONTENT_GLOBS = ("guides/**/*.md", "playbooks/**/*.md", "examples/**/*.md", "courses/**/*.md")
 REQUIRED = {
     "id",
     "type",
@@ -21,7 +21,7 @@ REQUIRED = {
     "reviewed_on",
 }
 LANGUAGES = {"en-US", "zh-CN"}
-TYPES = {"guide", "playbook", "example"}
+TYPES = {"guide", "playbook", "example", "course"}
 
 
 class ContentManifestError(ValueError):

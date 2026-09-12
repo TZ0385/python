@@ -54,3 +54,7 @@ async def main():
 
 在协程被取消（CancelledError）时，必须通过 `try...finally` 或异步上下文管理器
 确保数据库连接、HTTP 会话及锁资源被正确释放。
+
+---
+
+在 [flypython.com](https://flypython.com/learn/zh/reliable-async-patterns) 继续这个主题：配套的导读路径、前置条件、相关清单与最新审核日期。

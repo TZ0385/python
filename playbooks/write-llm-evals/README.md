@@ -23,3 +23,7 @@ reviewed_on: 2026-09-02
    any prompt or model migration. Never ship prompt changes without comparing diffs.
 6. Guard against flaky evals by establishing tolerance thresholds and isolating
    temperature/seed parameters during regression checks.
+
+---
+
+Continue this task on [flypython.com](https://flypython.com/resources#write-llm-evals): the full playbook directory, the guide behind each checklist, and the reviewed source catalog.

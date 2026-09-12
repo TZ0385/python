@@ -66,3 +66,7 @@ it does not remove the need for authentication, authorization, tests, and audit.
 - Logs and health signals answer actionable questions without leaking secrets.
 - The release and rollback commands are known.
 - The production behavior has been checked through the real user path.
+
+---
+
+Continue this topic on [flypython.com](https://flypython.com/learn/python-product-quality): the guided reading path, prerequisites, related checklists, and current review dates.

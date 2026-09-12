@@ -59,3 +59,7 @@ and configure pre-commit hooks to block untyped public APIs.
 
 Refer to the official [Python typing documentation](https://typing.python.org/en/latest/)
 for authoritative reference on Python's type system specifications.
+
+---
+
+Continue this topic on [flypython.com](https://flypython.com/learn/modern-python-typing): the guided reading path, prerequisites, related checklists, and current review dates.

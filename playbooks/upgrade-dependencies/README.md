@@ -20,3 +20,7 @@ reviewed_on: 2026-09-02
    newly requested permissions.
 6. Record the resolved versions and user-visible impact. Keep unrelated upgrades
    out of the same change.
+
+---
+
+Continue this task on [flypython.com](https://flypython.com/resources#upgrade-python-dependencies): the full playbook directory, the guide behind each checklist, and the reviewed source catalog.

@@ -1,26 +1,28 @@
-.PHONY: help check export render manifest test verify lint typecheck all
+.PHONY: help check export render manifest test verify courses lint typecheck all
 
 PYTHON ?= python3
 
 help:
 	@echo "FlyPython Development Workflow:"
-	@echo "  make check      - Run all catalog, export, readme, manifest, and example checks"
-	@echo "  make export     - Regenerate catalog.json"
-	@echo "  make render     - Regenerate README and README_cn catalog indexes"
+	@echo "  make check      - Run all catalog, radar, export, readme, manifest, example, and course checks"
+	@echo "  make export     - Regenerate catalog.json and radar.json"
+	@echo "  make render     - Regenerate README and README_cn catalog indexes plus the Radar table"
 	@echo "  make manifest   - Regenerate content-manifest.json"
 	@echo "  make test       - Run pytest test suite"
 	@echo "  make verify     - Verify all runnable examples"
+	@echo "  make courses    - Verify all course folders"
 	@echo "  make all        - Regenerate all exports and run all checks and tests"
 
 check:
 	$(PYTHON) tools/validate_catalog.py
-	$(PYTHON) tools/export_catalog.py --check
+	$(PYTHON) tools/export_catalog.py --check --target both
 	$(PYTHON) tools/render_readmes.py --check
 	$(PYTHON) tools/build_content_manifest.py --check
 	$(PYTHON) tools/verify_examples.py
+	$(PYTHON) tools/verify_courses.py
 
 export:
-	$(PYTHON) tools/export_catalog.py
+	$(PYTHON) tools/export_catalog.py --target both
 
 render:
 	$(PYTHON) tools/render_readmes.py
@@ -33,5 +35,8 @@ test:
 
 verify:
 	$(PYTHON) tools/verify_examples.py
+
+courses:
+	$(PYTHON) tools/verify_courses.py
 
 all: export render manifest test check

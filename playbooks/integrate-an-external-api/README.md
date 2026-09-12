@@ -22,3 +22,7 @@ reviewed_on: 2026-09-02
    rate limit, and partial failure. Keep live tests opt-in.
 6. Verify cost, latency, logs, and the user-visible fallback in a controlled
    environment before enabling production traffic.
+
+---
+
+Continue this task on [flypython.com](https://flypython.com/resources#integrate-an-external-api): the full playbook directory, the guide behind each checklist, and the reviewed source catalog.

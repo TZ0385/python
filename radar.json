@@ -1,0 +1,194 @@
+{
+  "$schema": "./schema/radar-v1.schema.json",
+  "schema_version": 1,
+  "projects": [
+    {
+      "id": "fastapi",
+      "repo": "fastapi/fastapi",
+      "url": "https://github.com/fastapi/fastapi",
+      "category": "web-apis",
+      "status": "stable",
+      "first_seen": "2026-09-02",
+      "reviewed_on": "2026-09-02",
+      "license": "MIT",
+      "evidence": {
+        "last_release": "Active release train; verified against the repository releases page at review time.",
+        "release_cadence": "Regular minor releases; security fixes ship promptly.",
+        "maintenance": "Large maintainer team and contributor base; de facto standard for typed ASGI services."
+      },
+      "ai_familiarity": "high",
+      "alternatives": [
+        "flask",
+        "django-ninja",
+        "litestar"
+      ],
+      "rationale_en": "Production-standard ASGI framework with automatic OpenAPI docs, Pydantic validation, and dependency injection.",
+      "rationale_zh": "生产级 ASGI 框架，自带 OpenAPI 文档、Pydantic 校验与依赖注入。",
+      "when_not_to_use_en": "For non-HTTP services, or teams standardized on Django's bundled ORM/admin stack.",
+      "when_not_to_use_zh": "非 HTTP 服务，或已围绕 Django 自带 ORM 与 admin 体系标准化的 团队。",
+      "risk_en": "Ensure background tasks handle errors properly and use async endpoints responsibly; blocking calls inside async routes degrade the whole service.",
+      "risk_zh": "需正确处理后台任务异常、审慎使用 async 端点；在 async 路由中执行阻塞 调用会拖垮整个服务。"
+    },
+    {
+      "id": "instructor",
+      "repo": "567-labs/instructor",
+      "url": "https://github.com/567-labs/instructor",
+      "category": "ai-tools",
+      "status": "stable",
+      "first_seen": "2026-09-02",
+      "reviewed_on": "2026-09-02",
+      "license": "MIT",
+      "evidence": {
+        "last_release": "Active release train; verified against the repository releases page at review time.",
+        "release_cadence": "Regular releases tracking provider API changes.",
+        "maintenance": "Actively maintained with broad provider integration coverage."
+      },
+      "ai_familiarity": "medium",
+      "alternatives": [
+        "openai structured outputs",
+        "outlines"
+      ],
+      "rationale_en": "Production standard for extracting structured JSON from LLMs using Pydantic models with retry validation.",
+      "rationale_zh": "从 LLM 提取结构化 JSON 的事实标准，基于 Pydantic 模型并带重试 校验。",
+      "when_not_to_use_en": "When your provider already enforces structured outputs natively and you need nothing beyond it.",
+      "when_not_to_use_zh": "所用提供商已原生强制结构化输出、且不需要更多能力时。",
+      "risk_en": "Requires API keys for the target LLM providers; retry loops add latency and token cost.",
+      "risk_zh": "需要目标 LLM 提供商的 API Key；重试循环会增加延迟与 token 成本。"
+    },
+    {
+      "id": "marimo",
+      "repo": "marimo-team/marimo",
+      "url": "https://github.com/marimo-team/marimo",
+      "category": "notebooks",
+      "status": "rising",
+      "first_seen": "2026-09-02",
+      "reviewed_on": "2026-09-02",
+      "license": "Apache-2.0",
+      "evidence": {
+        "last_release": "Active release train; verified against the repository releases page at review time.",
+        "release_cadence": "Frequent releases while the product matures.",
+        "maintenance": "Actively maintained by the marimo team with responsive issue triage."
+      },
+      "ai_familiarity": "low",
+      "alternatives": [
+        "jupyter",
+        "quarto"
+      ],
+      "rationale_en": "Reactive, pure-Python notebook stored as standard executable .py files with deterministic state execution.",
+      "rationale_zh": "响应式纯 Python 笔记本，以标准可执行 .py 文件保存，状态执行具有 确定性。",
+      "when_not_to_use_en": "When your workflow depends on Jupyter-only extensions, or kernel-state debugging is central to your process.",
+      "when_not_to_use_zh": "工作流依赖 Jupyter 专属扩展，或内核状态调试是核心流程时。",
+      "risk_en": "Requires a modern browser environment and replaces the Jupyter workflow rather than extending it.",
+      "risk_zh": "需要现代浏览器环境；它是 Jupyter 工作流的替代而非扩展。"
+    },
+    {
+      "id": "polars",
+      "repo": "pola-rs/polars",
+      "url": "https://github.com/pola-rs/polars",
+      "category": "data-pipelines",
+      "status": "stable",
+      "first_seen": "2026-09-02",
+      "reviewed_on": "2026-09-02",
+      "license": "MIT",
+      "evidence": {
+        "last_release": "Active release train; verified against the repository releases page at review time.",
+        "release_cadence": "Frequent releases; performance-focused changelogs.",
+        "maintenance": "Actively maintained by the Polars team and a growing contributor base."
+      },
+      "ai_familiarity": "medium",
+      "alternatives": [
+        "pandas",
+        "duckdb",
+        "dask"
+      ],
+      "rationale_en": "High-performance DataFrame library built in Rust on Apache Arrow with lazy query optimization.",
+      "rationale_zh": "高性能 DataFrame 库，基于 Rust 与 Apache Arrow，支持惰性查询 优化。",
+      "when_not_to_use_en": "When your pipeline leans on the pandas ecosystem (accessors, narrow libraries) or you need index-heavy semantics.",
+      "when_not_to_use_zh": "管线依赖 pandas 生态（accessor、小众库）或需要重度索引语义时。",
+      "risk_en": "API differs from pandas and memory layout is columnar; budget migration time rather than assuming drop-in parity.",
+      "risk_zh": "API 与 pandas 不同、内存为列式布局；迁移需要预留时间，不能当作 直接替换。"
+    },
+    {
+      "id": "pydantic-ai",
+      "repo": "pydantic/pydantic-ai",
+      "url": "https://github.com/pydantic/pydantic-ai",
+      "category": "ai-agents",
+      "status": "rising",
+      "first_seen": "2026-09-02",
+      "reviewed_on": "2026-09-02",
+      "license": "MIT",
+      "evidence": {
+        "last_release": "Active pre-1.0 release train; verified against the repository releases page at review time.",
+        "release_cadence": "Frequent releases while the API surface evolves.",
+        "maintenance": "Maintained by the Pydantic team; expect breaking changes before 1.0."
+      },
+      "ai_familiarity": "low",
+      "alternatives": [
+        "openai-agents-sdk",
+        "langgraph"
+      ],
+      "rationale_en": "Model-agnostic agent framework prioritizing type-safe structured outputs, dependency injection, and testability.",
+      "rationale_zh": "模型无关的 Agent 框架，优先保证类型安全的结构化输出、依赖注入与 可测试性。",
+      "when_not_to_use_en": "When you need a stable long-lived API surface today, or heavy multi-agent orchestration features.",
+      "when_not_to_use_zh": "需要当下就稳定的长周期 API，或重度多 Agent 编排能力时。",
+      "risk_en": "Rapidly evolving API surface; pin minor versions and re-run your evals on every upgrade.",
+      "risk_zh": "API 演进迅速；固定小版本，每次升级后重跑评测。"
+    },
+    {
+      "id": "ruff",
+      "repo": "astral-sh/ruff",
+      "url": "https://github.com/astral-sh/ruff",
+      "category": "code-quality",
+      "status": "stable",
+      "first_seen": "2026-09-02",
+      "reviewed_on": "2026-09-02",
+      "license": "MIT",
+      "evidence": {
+        "last_release": "Active release train; verified against the repository releases page at review time.",
+        "release_cadence": "Frequent releases with annotated changelogs.",
+        "maintenance": "Actively maintained by Astral; broad adoption across major projects."
+      },
+      "ai_familiarity": "high",
+      "alternatives": [
+        "flake8",
+        "black",
+        "isort",
+        "pylint"
+      ],
+      "rationale_en": "10-100x faster linter and formatter that unifies Flake8, Black, isort, and pyupgrade rules in a single configuration.",
+      "rationale_zh": "快 10–100 倍的 linter 与格式化工具，把 Flake8、Black、isort、 pyupgrade 规则统一到一份配置里。",
+      "when_not_to_use_en": "When a project depends on plugin ecosystems (e.g. Flake8 plugins) that have no Ruff equivalent yet.",
+      "when_not_to_use_zh": "项目依赖尚无 Ruff 等价实现的插件生态（如 Flake8 插件）时。",
+      "risk_en": "Drop-in Black compatibility; rare syntax-parsing differences surface on unusual code bases.",
+      "risk_zh": "与 Black 基本兼容；在非常规代码上偶见语法解析差异。"
+    },
+    {
+      "id": "uv",
+      "repo": "astral-sh/uv",
+      "url": "https://github.com/astral-sh/uv",
+      "category": "tooling-packaging",
+      "status": "stable",
+      "first_seen": "2026-09-02",
+      "reviewed_on": "2026-09-02",
+      "license": "MIT OR Apache-2.0",
+      "evidence": {
+        "last_release": "Active release train; verified against the repository releases page at review time.",
+        "release_cadence": "Frequent point releases, often multiple per month.",
+        "maintenance": "Actively maintained by Astral with a public roadmap and rapid issue triage."
+      },
+      "ai_familiarity": "medium",
+      "alternatives": [
+        "pip",
+        "pip-tools",
+        "pyenv",
+        "poetry"
+      ],
+      "rationale_en": "Extremely fast Rust-based package and project manager that replaces pip, pip-tools, venv, and pyenv with lockfile determinism.",
+      "rationale_zh": "极快的 Rust 实现的包与项目管理器，以锁文件确定性取代 pip、 pip-tools、venv 与 pyenv。",
+      "when_not_to_use_en": "When you must pin an existing pip-tools or Poetry workflow, or in air-gapped environments without wheel mirrors.",
+      "when_not_to_use_zh": "必须沿用既有 pip-tools 或 Poetry 工作流时，或缺少 wheel 镜像的离线环境中。",
+      "risk_en": "Actively maintained by Astral; relies on prebuilt binary wheels, so supply-chain review applies on upgrade.",
+      "risk_zh": "由 Astral 积极维护；依赖预编译二进制 wheel，升级时需做供应链审查。"
+    }
+  ]
+}
