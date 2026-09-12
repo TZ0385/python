@@ -146,3 +146,72 @@
 - FP-327 发布步骤：网站 pin 在一次刻意变更中固定到本仓库发布 SHA。
 - FP-334 仓库描述/话题 + 首个 GitHub Release；该 Release 时将
   CHANGELOG `[Unreleased]` 切为正式版本小节。
+
+## 8. 实施规范（挑战模型改造细节）
+
+### 8.1 课程文件夹改造（FP-411/412/413）
+
+现有文件夹骨架不变，叙事重心改到挑战：
+
+```
+courses/<slug>/
+  TASK.md / TASK_cn.md   ← 挑战入口：题目陈述、约束、通过条件
+  COURSE.md              ← 可选「引导模式」契约 + 徽章契约章节
+  lessons/L01*.md        ← 小节重标为 "Challenge 01: ..."；检查点
+                           写明满足的徽章要求与认领步骤
+  verify.py              ← 新增 `progress` 子命令
+  REVIEW.md              ← 追加 Agent 可解性实测记录
+```
+
+**认领码推导**（`python verify.py progress`）：
+
+- 每检查点输出：`id / 名称 / 通过状态 / 认领码`（通过时）
+- `code = base32(sha256(salt + course_id + checkpoint_id + evidence_hash))`
+  取前 8 字符——纯标准库、离线、跨平台确定
+- `salt` 为每课程常量，与 `course_id` 一起声明在 `COURSE.md`
+  frontmatter；推导方式在课程契约中文档化并接受代码级审核
+- 防手误不防作弊；所有表述为"自我报告的证据"
+
+**徽章元数据**（`COURSE.md` frontmatter，供网站 FP-407/409 渲染）：
+
+```yaml
+badge:
+  id: verified-report-tool
+  name_en: Verified Report Tool
+  name_zh: 验证过的报表工具
+  requires: 全部五个检查点认领通过
+salt: <per-course constant>
+course_id: hands-on-python-with-claude-code
+```
+
+### 8.2 路线层 `paths/`（FP-417/418）
+
+```
+paths/
+  foundation/PATH.md       入门路线：M0 + 复用 C1–C4；徽章「Agent 使用者」
+  data-analysis/PATH.md    DA 路线：C1 模块 0–1 + da-* 三门 + 综合项目；
+                           徽章「数据分析 Agent」；积分表
+  data-analysis/capstone/  综合项目挑战：捆绑公开数据集 + 容差数字校验
+                           + verify.py
+```
+
+`PATH.md` 为结构化路线契约（模块序列、前置、各课程徽章、路线徽章、
+积分表：检查点 10 分 / 课程 BOSS 50 分 / 综合项目 200 分），网站
+FP-409 渲染消费，网站侧不手抄定义。
+
+### 8.3 契约与文档跟进
+
+- `content-manifest.json`：`type` 增加 `"path"`，`paths/**` 入 manifest；
+  schema 与 `verify_courses.py` 同一次变更跟上
+- `CURATION_POLICY.md`：scope 补学习路线
+- `README.md` / `README_cn.md`：首屏叙事从资源目录调整为挑战平台
+- `REVIEW.md`：每门课追加 Agent 可解性实测（不被秒解、不被卡死）
+
+### 8.4 落地顺序（与 §6 对应）
+
+1. **C1 试点**（`hands-on-python-with-claude-code`）：progress 子命令 +
+   挑战叙事 + 徽章 frontmatter + `verify_courses.py` 扩展，一次变更
+2. 试点验收后**横推 C2–C5**
+3. `paths/foundation/`（复用现有课，最快可见）
+4. `da-eda` / `da-visualization` / `da-report` 新课 + `paths/data-analysis/`
+   + M0 入门模块
