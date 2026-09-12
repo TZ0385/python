@@ -34,28 +34,30 @@ jobs:
         run: uv python install ${{ matrix.python-version }}
 
       - name: Install dependencies and dev tools
-        run: uv pip install --system -r requirements-dev.lock.txt ruff
+        run: |
+          uv venv --python ${{ matrix.python-version }}
+          uv pip install -r requirements-dev.lock.txt ruff
 
       - name: Lint with ruff
-        run: ruff check .
+        run: uv run ruff check .
 
       - name: Run tests
-        run: python -m pytest
+        run: uv run python -m pytest
 
       - name: Validate catalog
-        run: python tools/validate_catalog.py
+        run: uv run python tools/validate_catalog.py
 
       - name: Verify public JSON exports
-        run: python tools/export_catalog.py --check --target both
+        run: uv run python tools/export_catalog.py --check --target both
 
       - name: Verify browsable README indexes
-        run: python tools/render_readmes.py --check
+        run: uv run python tools/render_readmes.py --check
 
       - name: Verify first-party content manifest
-        run: python tools/build_content_manifest.py --check
+        run: uv run python tools/build_content_manifest.py --check
 
       - name: Verify runnable examples
-        run: python tools/verify_examples.py
+        run: uv run python tools/verify_examples.py
 
       - name: Verify course folders
-        run: python tools/verify_courses.py
+        run: uv run python tools/verify_courses.py
