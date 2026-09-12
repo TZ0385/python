@@ -21,7 +21,8 @@ flypython.com repository owns the public website, learning guides, task
 playbooks, and visual presentation. Website consumers must use a pinned catalog
 commit rather than a moving branch.
 
-Current learning paths are:
+Current resource-catalog paths (separate from the course learning paths under
+`paths/`) are:
 
 - `foundations`
 - `web-apis`

@@ -32,8 +32,7 @@
       "course": "da-eda",
       "title_en": "Exploratory data analysis",
       "title_zh": "探索性数据分析",
-      "points": 100,
-      "status": "upcoming"
+      "points": 100
     },
     {
       "order": 2,
@@ -42,8 +41,7 @@
       "course": "da-visualization",
       "title_en": "Data visualization",
       "title_zh": "数据可视化",
-      "points": 100,
-      "status": "upcoming"
+      "points": 100
     },
     {
       "order": 3,
@@ -52,8 +50,7 @@
       "course": "da-report",
       "title_en": "From analysis to report",
       "title_zh": "从分析到报告",
-      "points": 100,
-      "status": "upcoming"
+      "points": 100
     },
     {
       "order": 4,
