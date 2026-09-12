@@ -1,0 +1,76 @@
+{
+  "id": "foundation",
+  "slug": "foundation",
+  "status": "live",
+  "title_en": "Agent tools foundation",
+  "title_zh": "Agent 工具基础",
+  "summary_en": "Learn to drive real coding agents - Claude Code and Codex CLI - give them good rules, and verify everything they produce.",
+  "summary_zh": "学会驱动真正的编码 Agent（Claude Code 与 Codex CLI），给它们好规则，并验证它们产出的一切。",
+  "audience_en": "Beginners who have never (or barely) used AI coding agents.",
+  "audience_zh": "从未用过（或刚接触）AI 编程 Agent 的初学者。",
+  "outcome_en": "You can independently drive Claude Code and Codex on small tasks, write a single-source rules file, and verify agent output with your own hands.",
+  "outcome_zh": "你能独立驱动 Claude Code 与 Codex 完成小任务，写出单一真源规则文件，并亲手验证 Agent 的产出。",
+  "badge": {
+    "id": "agent-user",
+    "name_en": "Agent User",
+    "name_zh": "Agent 使用者"
+  },
+  "modules": [
+    {
+      "order": 0,
+      "id": "m0",
+      "kind": "module",
+      "ref": "modules/m0-orientation.md",
+      "title_en": "The agent tool landscape",
+      "title_zh": "Agent 工具生态总览",
+      "points": 10,
+      "kind_label": "orientation"
+    },
+    {
+      "order": 1,
+      "id": "m1",
+      "kind": "course",
+      "course": "hands-on-python-with-claude-code",
+      "title_en": "Claude Code hands-on",
+      "title_zh": "Claude Code 实战",
+      "points": 100
+    },
+    {
+      "order": 2,
+      "id": "m2",
+      "kind": "course",
+      "course": "hands-on-with-openai-codex-cli",
+      "title_en": "Codex CLI hands-on",
+      "title_zh": "Codex CLI 实战",
+      "points": 100
+    },
+    {
+      "order": 3,
+      "id": "m3",
+      "kind": "course",
+      "course": "agent-rules-single-source",
+      "title_en": "One source of truth for agent rules",
+      "title_zh": "Agent 规则的单一真源",
+      "points": 100
+    },
+    {
+      "order": 4,
+      "id": "m4",
+      "kind": "course",
+      "course": "verifying-ai-generated-code",
+      "title_en": "Verifying AI-generated code",
+      "title_zh": "验证 AI 生成的代码",
+      "points": 100
+    },
+    {
+      "order": 5,
+      "id": "route-challenge",
+      "kind": "module",
+      "ref": "modules/route-challenge.md",
+      "title_en": "Route challenge: dual-agent, double-verified",
+      "title_zh": "路线挑战：双 Agent、双重验证",
+      "points": 200,
+      "kind_label": "project"
+    }
+  ]
+}

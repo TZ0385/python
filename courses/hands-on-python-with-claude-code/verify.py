@@ -10,6 +10,9 @@ starter state and checks that the failing tests are the intended ones.
 from __future__ import annotations
 
 import argparse
+import base64
+import hashlib
+import json
 import os
 import subprocess
 import sys
@@ -28,11 +31,84 @@ EXPECTED_STARTER_FAILURES = (
 )
 
 
+
+COURSE_ID = 'course-claude-code'
+# Documented constant: claim codes derive deterministically from
+# (COURSE_ID, checkpoint_id, COURSE_SALT). They are spot-checkable
+# self-reported evidence, not tamper-proof secrets — see
+# docs/repo-plan-0.0.4.md FP-411.
+COURSE_SALT = 'a54f3ce504534d68'
+
+CHECKPOINTS = [
+    {"id": "l01", "gate": "attest", "title": '复现故障 / Reproduce the failure'},
+    {"id": "l02", "gate": "attest", "title": '任务契约 / Task contract'},
+    {"id": "l03", "gate": "starter-suite", "title": '边界修改，按测试推进 / Bounded change, test by test'},
+    {"id": "l04", "gate": "both-suites", "title": '验证与审查 / Verify and review'},
+    {"id": "l05", "gate": "attest", "title": '应用到自己的项目 / Apply to your project'},
+]
+
+def _claim_code(checkpoint_id):
+    digest = hashlib.sha256(
+        (COURSE_ID + ":" + checkpoint_id + ":" + COURSE_SALT).encode("utf-8")
+    ).digest()
+    return base64.b32encode(digest).decode("ascii")[:8]
+
+def _run_suite(implementation):
+    environment = os.environ.copy()
+    environment["PYTHONPATH"] = str(ROOT / implementation)
+    return subprocess.run(
+        [sys.executable, "-m", "unittest", "discover", "-s", str(ROOT / "tests")],
+        env=environment, check=False, capture_output=True, text=True,
+    )
+
+def run_progress(as_json):
+    starter = _run_suite("starter")
+    solution = _run_suite("solution")
+    starter_ok = starter.returncode == 0
+    solution_ok = solution.returncode == 0
+    rows = []
+    for checkpoint in CHECKPOINTS:
+        gate = checkpoint["gate"]
+        if gate == "attest":
+            status, kind = "attest", "attested"
+        elif gate == "starter-suite":
+            status = "passed" if starter_ok else "open"
+            kind = "objective"
+        else:
+            status = "passed" if (starter_ok and solution_ok) else "open"
+            kind = "objective"
+        code = _claim_code(checkpoint["id"]) if status in ("passed", "attest") else None
+        row = dict(checkpoint)
+        row["status"] = status
+        row["kind"] = kind
+        row["claim_code"] = code
+        rows.append(row)
+    if as_json:
+        print(json.dumps({"course": COURSE_ID,
+            "starter_suite_passed": starter_ok,
+            "solution_suite_passed": solution_ok,
+            "checkpoints": rows}, ensure_ascii=False, indent=2))
+    else:
+        starter_state = "通过" if starter_ok else "未通过"
+        solution_state = "通过" if solution_ok else "未通过"
+        print("课程 " + COURSE_ID)
+        print("实现状态: starter " + starter_state + " / solution " + solution_state)
+        for row in rows:
+            state = row["status"] + ("（自报）" if row["kind"] == "attested" else "")
+            code = "认领码 " + row["claim_code"] if row["claim_code"] else "—"
+            print("  " + row["id"] + "  " + row["title"] + "  [" + state + "]  " + code)
+        print("认领码是自我报告的证据，在 flypython.com 记录；绝非证书。")
+    return 0
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("implementation", choices=("starter", "solution"))
+    parser.add_argument("implementation", choices=("progress", "starter", "solution"))
+    parser.add_argument("--json", action="store_true")
     parser.add_argument("--expect-failure", action="store_true")
     args = parser.parse_args()
+
+    if args.implementation == "progress":
+        return run_progress(args.json)
 
     command = [sys.executable, "-m", "unittest", "discover", "-s", str(ROOT / "tests")]
     environment = os.environ.copy()

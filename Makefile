@@ -1,4 +1,4 @@
-.PHONY: help check export render manifest test verify courses lint typecheck all
+.PHONY: help check export render manifest test verify courses paths lint typecheck all
 
 PYTHON ?= python3
 
@@ -11,6 +11,7 @@ help:
 	@echo "  make test       - Run pytest test suite"
 	@echo "  make verify     - Verify all runnable examples"
 	@echo "  make courses    - Verify all course folders"
+	@echo "  make paths      - Verify all learning-path contracts"
 	@echo "  make all        - Regenerate all exports and run all checks and tests"
 
 check:
@@ -20,6 +21,7 @@ check:
 	$(PYTHON) tools/build_content_manifest.py --check
 	$(PYTHON) tools/verify_examples.py
 	$(PYTHON) tools/verify_courses.py
+	$(PYTHON) tools/verify_paths.py
 
 export:
 	$(PYTHON) tools/export_catalog.py --target both
@@ -38,5 +40,8 @@ verify:
 
 courses:
 	$(PYTHON) tools/verify_courses.py
+
+paths:
+	$(PYTHON) tools/verify_paths.py
 
 all: export render manifest test check

@@ -4,9 +4,15 @@ type: course
 title: One source of truth for agent rules
 summary: Stop maintaining diverging AGENTS.md, CLAUDE.md, and .cursorrules files — build a checker that proves your repository has exactly one rule source, taught hands-on with your coding agent.
 lang: en-US
-content_version: 1
+content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
+badge:
+  id: course-agent-rules
+  name_en: Measure the drift
+  name_zh: 规则漂移检测
+  requires: All five checkpoints claimed (L01–L05)
+course_id: course-agent-rules
 ---
 
 # One source of truth for agent rules
@@ -58,7 +64,16 @@ and the AGENTS.md guide on flypython.com), multi-repo setups, or
 machine-policy enforcement. The checker is deliberately narrow: one
 directory, three file names, one truth.
 
+
+## Badge contract
+
+- Badge: **Measure the drift Badge** (badge id `course-agent-rules`) - earned by claiming all five checkpoints.
+- Challenges: L01-L05 checkpoints, 10 points each; +50 course-badge bonus when all five are claimed on flypython.com.
+- Evidence: `python verify.py progress` - L03 (bounded change) and L04 (verify & review) are objectively gated by the suite; L01/L02/L05 are learner-attested.
+- Submission: each passed checkpoint prints a deterministic claim code; record it on flypython.com against your account. Self-reported evidence, never a certificate.
+
 ## Folder map
+
 
 `COURSE.md`/`COURSE_cn.md`, bilingual `lessons/`, `scenario/` repositories,
 `TASK.md`/`TASK_cn.md` (the code contract), `starter/`, `solution/`, `tests/`

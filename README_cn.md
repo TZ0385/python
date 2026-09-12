@@ -38,7 +38,7 @@ python examples/product-slug/verify.py solution
 
 | 目标 | 从这里开始 | 最终产出 |
 | --- | --- | --- |
-| 跟随编码 Agent 动手实战 | [Agent 授课课程](courses/) | 一个通过验证的项目：任务契约 → 边界修改 → `verify.py` 证据 |
+| 解题式动手实战 | [挑战课程](courses/) · [学习路线](paths/) | 一个通过验证的项目 + `verify.py` 的检查点认领码 |
 | 安全地编写和修改 Python | [AI Coding 工作方法](guides/ai-coding/workflow_cn.md) | 上下文明确、有证据的边界修改 |
 | 把 Python 变成可靠产品 | [产品质量指南](guides/python-engineering/product-quality_cn.md) | 可测试、可观测、可回退的产品路径 |
 | 完成反复出现的工程任务 | [Playbook](playbooks/README_cn.md) | Bug 修复、API 修改、外部集成、依赖升级或发布 |

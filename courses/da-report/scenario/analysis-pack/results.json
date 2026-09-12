@@ -1,0 +1,15 @@
+{
+  "dataset": "transactions.csv",
+  "rows_total": 142,
+  "rows_clean": 137,
+  "total_revenue": 33347.89,
+  "revenue_by_region": {
+    "East": 7477.22,
+    "North": 9401.64,
+    "South": 9140.09,
+    "West": 7328.94
+  },
+  "top_category": "Books",
+  "first_date": "2026-01-03",
+  "last_date": "2026-03-28"
+}

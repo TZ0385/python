@@ -1,0 +1,66 @@
+{
+  "id": "data-analysis",
+  "slug": "data-analysis",
+  "status": "live",
+  "title_en": "Data analysis with agents",
+  "title_zh": "用 Agent 做数据分析",
+  "summary_en": "From a messy export to a verified analysis report: clean, explore, visualize, and report on a real dataset with your agent.",
+  "summary_zh": "从混乱的数据导出到一份经过验证的分析报告：用你的 Agent 完成清洗、探索、可视化与报告。",
+  "audience_en": "Beginners who read data in Excel and want their agent to do real analysis.",
+  "audience_zh": "会在 Excel 里看数据、想让 Agent 完成真正分析初学者。",
+  "outcome_en": "You can take a raw dataset end to end - clean, explore, visualize, report - with every number verified.",
+  "outcome_zh": "你能端到端处理一份原始数据——清洗、探索、可视化、报告——每个数字都经过验证。",
+  "badge": {
+    "id": "data-analysis-agent",
+    "name_en": "Data Analysis Agent",
+    "name_zh": "数据分析 Agent"
+  },
+  "modules": [
+    {
+      "order": 0,
+      "id": "m0",
+      "kind": "course",
+      "course": "hands-on-python-with-claude-code",
+      "title_en": "Start: environment and first verification",
+      "title_zh": "起步：环境与第一次验证",
+      "points": 100
+    },
+    {
+      "order": 1,
+      "id": "m1",
+      "kind": "course",
+      "course": "da-eda",
+      "title_en": "Exploratory data analysis",
+      "title_zh": "探索性数据分析",
+      "points": 100
+    },
+    {
+      "order": 2,
+      "id": "m2",
+      "kind": "course",
+      "course": "da-visualization",
+      "title_en": "Data visualization",
+      "title_zh": "数据可视化",
+      "points": 100
+    },
+    {
+      "order": 3,
+      "id": "m3",
+      "kind": "course",
+      "course": "da-report",
+      "title_en": "From analysis to report",
+      "title_zh": "从分析到报告",
+      "points": 100
+    },
+    {
+      "order": 4,
+      "id": "capstone",
+      "kind": "module",
+      "ref": "modules/capstone.md",
+      "title_en": "Capstone: verified analysis of a real dataset",
+      "title_zh": "综合项目：真实数据集的验证分析",
+      "points": 200,
+      "kind_label": "project"
+    }
+  ]
+}

@@ -4,9 +4,15 @@ type: course
 title: 用 Claude Code 实战 Python
 summary: 一门由 Agent 授课的课程：从下载课程文件夹到交付一个经过测试与验证的 Python 报表工具——包括任务契约、最小变更和客观的通过/失败证据。
 lang: zh-CN
-content_version: 1
+content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
+badge:
+  id: course-claude-code
+  name_en: Reproduce the failure
+  name_zh: 复现故障
+  requires: 全部五个检查点认领通过（L01–L05）
+course_id: course-claude-code
 ---
 
 # 用 Claude Code 实战 Python
@@ -62,7 +68,16 @@ Claude Code 安装、提示词技巧、多文件架构、pandas 或真正的 Exc
 （`.xlsx`）文件、部署、任何销售内容。这些主题在配套仓库里有指南和
 手册——链接过去，不要现场发挥。
 
+
+## 徽章契约
+
+- 徽章：**复现故障徽章**（徽章 id `course-claude-code`）——认领全部五个检查点后获得。
+- 挑战：L01–L05 检查点各 10 分；五项全部在 flypython.com 认领后另加 50 分课程徽章奖励。
+- 证据：`python verify.py progress` —— L03（边界修改）与 L04（验证与审查）由测试套件客观判定；L01/L02/L05 为学习者自报。
+- 提交：每个通过的检查点会打印确定性认领码，在 flypython.com 上记入你的账号。这是自我报告的证据，绝不是证书。
+
 ## 文件夹结构
+
 
 ```
 COURSE.md / COURSE_cn.md   本文件（英文 / 中文）

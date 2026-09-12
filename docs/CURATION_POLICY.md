@@ -9,9 +9,10 @@ resource proposals and catalog pull requests.
 FlyPython catalogs durable resources for working with Python in the AI-coding
 era: building, verifying, and delivering Python projects — including
 Python-based AI agent development. It also hosts first-party courses
-(`courses/`, agent-taught folders with objective verification) and Project
-Radar entries (`catalog/projects/`, reviewed current projects with lifecycle
-status). The catalog favors material that helps readers build skills or use a
+(`courses/`, challenge folders with objective verification and an optional
+agent-guided mode), learning paths (`paths/`, sequenced course-plus-project
+routes with badges), and Project Radar entries (`catalog/projects/`,
+reviewed current projects with lifecycle status). The catalog favors material that helps readers build skills or use a
 maintained tool safely. It is not a general link directory, product launch
 feed, website renderer, or hosting location for unrelated applications.
 
@@ -20,7 +21,8 @@ flypython.com repository owns the public website, learning guides, task
 playbooks, and visual presentation. Website consumers must use a pinned catalog
 commit rather than a moving branch.
 
-Current learning paths are:
+Current resource-catalog paths (separate from the course learning paths under
+`paths/`) are:
 
 - `foundations`
 - `web-apis`

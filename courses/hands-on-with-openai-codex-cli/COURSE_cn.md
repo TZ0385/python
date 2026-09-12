@@ -4,9 +4,15 @@ type: course
 title: OpenAI Codex CLI 实战
 summary: 与 Claude Code 课程相同的已验证 Python 工作流——任务契约、最小变更、客观 verify.py 证据——改用 OpenAI Codex CLI 完成实战。
 lang: zh-CN
-content_version: 1
+content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
+badge:
+  id: course-codex-cli
+  name_en: Reproduce with Codex in the loop
+  name_zh: Codex 协同复现
+  requires: 全部五个检查点认领通过（L01–L05）
+course_id: course-codex-cli
 ---
 
 # OpenAI Codex CLI 实战
@@ -51,7 +57,16 @@ reviewed_on: 2026-09-12
 Codex CLI 安装、模型选择、提示工程、多文件架构、真正的 `.xlsx` 文件、
 部署。这些在配套仓库的指南与手册里——链接过去，不要现场发挥。
 
+
+## 徽章契约
+
+- 徽章：**让 Codex 进环，先复现故障徽章**（徽章 id `course-codex-cli`）——认领全部五个检查点后获得。
+- 挑战：L01–L05 检查点各 10 分；五项全部在 flypython.com 认领后另加 50 分课程徽章奖励。
+- 证据：`python verify.py progress` —— L03（边界修改）与 L04（验证与审查）由测试套件客观判定；L01/L02/L05 为学习者自报。
+- 提交：每个通过的检查点会打印确定性认领码，在 flypython.com 上记入你的账号。这是自我报告的证据，绝不是证书。
+
 ## 文件夹结构
+
 
 与 Claude Code 课程相同的布局：`COURSE.md`/`COURSE_cn.md`、双语
 `lessons/`、`scenario/` 皮肤、`TASK.md`/`TASK_cn.md`、`starter/`、

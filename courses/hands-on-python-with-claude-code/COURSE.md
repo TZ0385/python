@@ -4,9 +4,15 @@ type: course
 title: Hands-on Python with Claude Code
 summary: An agent-taught course that takes you from a cloned folder to a tested, verified Python report tool using Claude Code — including the task contract, the bounded change, and the objective pass/fail evidence.
 lang: en-US
-content_version: 1
+content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
+badge:
+  id: course-claude-code
+  name_en: Reproduce the failure
+  name_zh: 复现故障
+  requires: All five checkpoints claimed (L01–L05)
+course_id: course-claude-code
 ---
 
 # Hands-on Python with Claude Code
@@ -70,7 +76,16 @@ Installing Claude Code, prompt tricks, multi-file architecture, pandas or
 real Excel (`.xlsx`) files, deployment, or selling anything. For those, the
 companion repository has guides and playbooks — link, don't improvise.
 
+
+## Badge contract
+
+- Badge: **Reproduce the failure Badge** (badge id `course-claude-code`) - earned by claiming all five checkpoints.
+- Challenges: L01-L05 checkpoints, 10 points each; +50 course-badge bonus when all five are claimed on flypython.com.
+- Evidence: `python verify.py progress` - L03 (bounded change) and L04 (verify & review) are objectively gated by the suite; L01/L02/L05 are learner-attested.
+- Submission: each passed checkpoint prints a deterministic claim code; record it on flypython.com against your account. Self-reported evidence, never a certificate.
+
 ## Folder map
+
 
 ```
 COURSE.md / COURSE_cn.md   this file (EN / 中文)

@@ -4,9 +4,15 @@ type: course
 title: "From \"it runs\" to \"it ships\": verifying AI-generated code"
 summary: Build the release-evidence machine your AI-written project is missing — a ship check that runs the tests, parses what actually ran, refuses zero-test projects, and writes an honest delivery record.
 lang: en-US
-content_version: 1
+content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
+badge:
+  id: course-verify-ship
+  name_en: It runs is not evidence
+  name_zh: 能跑不是证据
+  requires: All five checkpoints claimed (L01–L05)
+course_id: course-verify-ship
 ---
 
 # From "it runs" to "it ships": verifying AI-generated code
@@ -56,7 +62,16 @@ Deployment platforms, CI services, performance testing, or staging
 environments. The product-quality guide on flypython.com covers the wider
 release checklist; this course builds the evidence core.
 
+
+## Badge contract
+
+- Badge: **It runs is not evidence Badge** (badge id `course-verify-ship`) - earned by claiming all five checkpoints.
+- Challenges: L01-L05 checkpoints, 10 points each; +50 course-badge bonus when all five are claimed on flypython.com.
+- Evidence: `python verify.py progress` - L03 (bounded change) and L04 (verify & review) are objectively gated by the suite; L01/L02/L05 are learner-attested.
+- Submission: each passed checkpoint prints a deterministic claim code; record it on flypython.com against your account. Self-reported evidence, never a certificate.
+
 ## Folder map
+
 
 `COURSE.md`/`COURSE_cn.md`, bilingual `lessons/`, `scenario/` projects,
 `TASK.md`/`TASK_cn.md` (the code contract), `starter/`, `solution/`,

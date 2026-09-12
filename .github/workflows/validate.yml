@@ -61,3 +61,5 @@ jobs:
 
       - name: Verify course folders
         run: .venv/bin/python tools/verify_courses.py
+      - name: Verify learning-path contracts
+        run: .venv/bin/python tools/verify_paths.py

@@ -4,7 +4,8 @@
 更新日期：2026-09-12（第 3 版——挑战模型定稿 + A/B 阶段拆分）
 关联：flypython.com `docs/product-and-growth-plan-0.0.4.md`
 
-状态：仅规划文档。本文件所述内容均未实现。`AGENTS.md` 的仓库边界不变：
+状态：除 FP-414 与真实 Agent 可解性试跑外，本计划已实现并提交为
+`eb64870`；网站通过固定提交消费内容。`AGENTS.md` 的仓库边界不变：
 本仓库拥有经审核的内容、可运行的证据与稳定的 JSON 契约；网站拥有呈现、
 账号体系与转化。所有新内容中英同一次变更交付。
 
@@ -114,18 +115,36 @@
 网站内容第二副本。反作弊设计刻意保持轻量（可抽查的码）；重反作弊是
 网站侧的关切，不在本仓库范围。
 
-## 5. TODO（全部未验证）
+## 5. TODO 与当前状态
 
-- [ ] FP-411 全部五门课程的认领码子命令，推导方式已文档化。
-- [ ] FP-412 徽章契约 + 挑战叙事，中英一次变更交付。
-- [ ] FP-413 供网站渲染的结构化徽章元数据。
+- [x] FP-411 全部五门课程的认领码子命令，推导方式已文档化。（本地
+  2026-09-12：`verify.py progress` 上线——l03/l04 由测试套件客观判定、
+  l01/l02/l05 自报；认领码 8 位 base32，确定性两次运行一致）
+- [x] FP-412 徽章契约 + 挑战叙事，中英一次变更交付。（本地
+  2026-09-12：五门课程 COURSE.md/COURSE_cn.md 增加徽章契约章节并升
+  content_version 2，manifest 已重生成）
+- [x] FP-413 供网站渲染的结构化徽章元数据。（本地 2026-09-12：全部
+  8 门课 `COURSE.md`/`COURSE_cn.md` frontmatter 增加 `badge`（id、
+  name_en、name_zh、requires）与 `course_id`）
 - [ ] FP-414 SKILL.md 打包评估，附书面记录。
-- [ ] FP-415 `verify_courses.py` 认领码覆盖进 CI。
-- [ ] FP-416 DA 路线三门新课（`da-eda`、`da-visualization`、
-      `da-report`），中英 + verify.py 双向验证。
-- [ ] FP-417 `paths/data-analysis/` 路线契约 + 综合项目挑战。
-- [ ] FP-418 基础路线 M0 入门模块 + 路线挑战 + `paths/foundation/`
-      路线契约。
+- [x] FP-415 `verify_courses.py` 认领码覆盖进 CI。（本地 2026-09-12：
+  进度契约检查——双运行确定性、JSON 结构、5 检查点、码格式——已入
+  验证器并随 `make check`/validate.yml 执行）
+- [x] FP-416 DA 路线三门新课（`da-eda`、`da-visualization`、
+      `da-report`），中英 + verify.py 双向验证。（本地 2026-09-12：
+      首批非标准库课程，依赖经 `requirements.txt` 锁定——pandas
+      2.3.3 / matplotlib 3.10.9；da-eda 12 测试、da-visualization
+      5 测试、da-report 6 测试；Agent 可解性实测仍待录 REVIEW.md）
+- [x] FP-417 `paths/data-analysis/` 路线契约 + 综合项目挑战。（本地
+  2026-09-12：`path.json` + `capstone/`——303 行脏数据集、
+  `verify.py` 真值校验（容差 0.01）、综合项目认领码）
+- [x] FP-418 基础路线 M0 入门模块 + 路线挑战 + `paths/foundation/`
+      路线契约。（本地 2026-09-12：`path.json` + `modules/` 双语
+      模块文档，复用 C1–C4 为模块 1–4）
+- [x] 配套契约：manifest `type:"path"` + schema 枚举、`paths/**/*.md`
+      入 CONTENT_GLOBS、`tools/verify_paths.py` 入 `make check` 与
+      validate.yml、CURATION_POLICY scope 加学习路线、README 双语
+      叙事改为挑战平台、requirements-dev 锁定 DA 依赖。
 
 ## 6. 执行顺序（本仓库全部为阶段 A 内容引擎）
 

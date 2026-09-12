@@ -8,6 +8,7 @@ lesson has a paired ``*_cn.md`` file (and vice versa), and the course's own
 
 from __future__ import annotations
 
+import json
 import re
 import subprocess
 import sys
@@ -72,6 +73,53 @@ def run_course_verifier(course: Path) -> list[str]:
                 f"{name}: verification failed: {' '.join(command[2:])}"
                 f"\n{(result.stdout or '') + (result.stderr or '')}".rstrip()
             )
+    problems.extend(check_progress_contract(course))
+    return problems
+
+
+def check_progress_contract(course: Path) -> list[str]:
+    """FP-415: the progress subcommand must be deterministic and well-shaped.
+
+    Runs ``verify.py progress --json`` twice and requires identical output,
+    a valid document, five checkpoints (l01..l05), and well-formed claim
+    codes wherever one is printed.
+    """
+
+    verify = course / "verify.py"
+    if not verify.exists():
+        return []
+    name = course.name
+    runs: list[str] = []
+    for _ in range(2):
+        result = subprocess.run(
+            [sys.executable, str(verify), "progress", "--json"],
+            check=False, capture_output=True, text=True,
+        )
+        if result.returncode != 0:
+            return [f"{name}: progress failed\n{(result.stdout or '') + (result.stderr or '')}".rstrip()]
+        runs.append(result.stdout)
+    if runs[0] != runs[1]:
+        return [f"{name}: progress output is not deterministic between runs"]
+    try:
+        document = json.loads(runs[0])
+    except ValueError:
+        return [f"{name}: progress --json did not emit valid JSON"]
+
+    problems: list[str] = []
+    for key in ("course", "starter_suite_passed", "solution_suite_passed", "checkpoints"):
+        if key not in document:
+            problems.append(f"{name}: progress document missing {key!r}")
+    checkpoints = document.get("checkpoints")
+    if not isinstance(checkpoints, list) or len(checkpoints) != 5:
+        problems.append(f"{name}: progress must list exactly five checkpoints")
+        return problems
+    expected_ids = [f"l0{index}" for index in range(1, 6)]
+    if [item.get("id") for item in checkpoints] != expected_ids:
+        problems.append(f"{name}: checkpoint ids must be {expected_ids}")
+    for item in checkpoints:
+        code = item.get("claim_code")
+        if code is not None and not re.fullmatch(r"[A-Z2-7]{8}", str(code)):
+            problems.append(f"{name}: malformed claim code for {item.get('id')}: {code!r}")
     return problems
 
 
