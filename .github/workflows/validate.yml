@@ -39,25 +39,25 @@ jobs:
           uv pip install -r requirements-dev.lock.txt ruff
 
       - name: Lint with ruff
-        run: uv run ruff check .
+        run: .venv/bin/ruff check .
 
       - name: Run tests
-        run: uv run python -m pytest
+        run: .venv/bin/python -m pytest
 
       - name: Validate catalog
-        run: uv run python tools/validate_catalog.py
+        run: .venv/bin/python tools/validate_catalog.py
 
       - name: Verify public JSON exports
-        run: uv run python tools/export_catalog.py --check --target both
+        run: .venv/bin/python tools/export_catalog.py --check --target both
 
       - name: Verify browsable README indexes
-        run: uv run python tools/render_readmes.py --check
+        run: .venv/bin/python tools/render_readmes.py --check
 
       - name: Verify first-party content manifest
-        run: uv run python tools/build_content_manifest.py --check
+        run: .venv/bin/python tools/build_content_manifest.py --check
 
       - name: Verify runnable examples
-        run: uv run python tools/verify_examples.py
+        run: .venv/bin/python tools/verify_examples.py
 
       - name: Verify course folders
-        run: uv run python tools/verify_courses.py
+        run: .venv/bin/python tools/verify_courses.py
