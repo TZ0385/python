@@ -2,7 +2,11 @@
 
 This file records notable catalog-contract and maintenance changes.
 
-## [Unreleased]
+## [0.1.0] - 2026-09-12
+
+First versioned release: agent-taught courses, the Project Radar
+system, and the 0.0.3 contract updates.
+
 
 ### Added
 
