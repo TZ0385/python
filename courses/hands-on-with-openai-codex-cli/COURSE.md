@@ -4,7 +4,7 @@ type: course
 title: Hands-on with OpenAI Codex CLI
 summary: The same verified Python workflow as the Claude Code course — task contract, bounded change, objective verify.py evidence — taught hands-on with the OpenAI Codex CLI instead.
 lang: en-US
-content_version: 1
+content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
 ---
@@ -59,7 +59,16 @@ Installing Codex CLI, model selection, prompt engineering, multi-file
 architecture, real `.xlsx` files, or deployment. The companion repository's
 guides and playbooks cover those — link, don't improvise.
 
+
+## Badge contract
+
+- Badge: **Reproduce with Codex in the loop Badge** (badge id `course-codex-cli`) - earned by claiming all five checkpoints.
+- Challenges: L01-L05 checkpoints, 10 points each; +50 course-badge bonus when all five are claimed on flypython.com.
+- Evidence: `python verify.py progress` - L03 (bounded change) and L04 (verify & review) are objectively gated by the suite; L01/L02/L05 are learner-attested.
+- Submission: each passed checkpoint prints a deterministic claim code; record it on flypython.com against your account. Self-reported evidence, never a certificate.
+
 ## Folder map
+
 
 Same layout as the Claude Code course: `COURSE.md`/`COURSE_cn.md`, bilingual
 `lessons/`, `scenario/` skins, `TASK.md`/`TASK_cn.md`, `starter/`,

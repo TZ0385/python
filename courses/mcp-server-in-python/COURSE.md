@@ -4,7 +4,7 @@ type: course
 title: Give your agent tools with MCP (Python)
 summary: Build a stateless Model Context Protocol tool server in pure Python — JSON-RPC 2.0 dispatch, schema validation, error isolation, and the 2026-07-28 input_required round-trip — and learn where a real tool belongs.
 lang: en-US
-content_version: 1
+content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
 ---
@@ -62,7 +62,16 @@ Transports beyond plain JSON-RPC dicts (stdio/HTTP wiring), deployment, or
 client-side configuration. The repository's MCP migration guide covers
 moving existing servers to the 2026-07-28 specification.
 
+
+## Badge contract
+
+- Badge: **MCP Tool Server Badge** (badge id `course-mcp-tools`) - earned by claiming all five checkpoints.
+- Challenges: L01-L05 checkpoints, 10 points each; +50 course-badge bonus when all five are claimed on flypython.com.
+- Evidence: `python verify.py progress` - L03 (validation & isolation) and L04 (the round-trip) are objectively gated by the suite; L01/L02/L05 are learner-attested.
+- Submission: each passed checkpoint prints a deterministic claim code; record it on flypython.com against your account. Self-reported evidence, never a certificate.
+
 ## Folder map
+
 
 `COURSE.md`/`COURSE_cn.md`, bilingual `lessons/`, `scenario/requests/`
 wire samples, `TASK.md`/`TASK_cn.md` (the full server contract),

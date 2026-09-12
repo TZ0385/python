@@ -50,7 +50,7 @@
     {
       "id": "course-agent-rules",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
       "reviewed_on": "2026-09-12",
       "locales": [
@@ -59,14 +59,14 @@
           "path": "courses/agent-rules-single-source/COURSE.md",
           "title": "One source of truth for agent rules",
           "summary": "Stop maintaining diverging AGENTS.md, CLAUDE.md, and .cursorrules files — build a checker that proves your repository has exactly one rule source, taught hands-on with your coding agent.",
-          "sha256": "41aaa6f0681ea5a40263dd5372f0d4bf402c947b6727486c4ff5ba7f0a2a9cee"
+          "sha256": "b09497cd76bea0191c3944dec61cc9bb89f245a21750fcf5013f4c4d4db7d51c"
         },
         {
           "lang": "zh-CN",
           "path": "courses/agent-rules-single-source/COURSE_cn.md",
           "title": "Agent 规则的单一真源",
           "summary": "不再同时维护彼此打架的 AGENTS.md、CLAUDE.md 与 .cursorrules——亲手构建一个能证明仓库只有一处规则真源的检查器，由你的编码 Agent 授课。",
-          "sha256": "5b90d5556cdff097812ef25ab9134b3939f677f6106c162c28ea15f1986091ee"
+          "sha256": "245fc0cc40f3103ed5fed99f6f656e9b04ff7093bd0d0782203a0dbafa647864"
         }
       ]
     },
@@ -188,7 +188,7 @@
     {
       "id": "course-claude-code",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
       "reviewed_on": "2026-09-12",
       "locales": [
@@ -197,14 +197,14 @@
           "path": "courses/hands-on-python-with-claude-code/COURSE.md",
           "title": "Hands-on Python with Claude Code",
           "summary": "An agent-taught course that takes you from a cloned folder to a tested, verified Python report tool using Claude Code — including the task contract, the bounded change, and the objective pass/fail evidence.",
-          "sha256": "048b8f210dedc9d60bffb98a8347c89586295e5be3c16abd6be20ea50ef48563"
+          "sha256": "aec892c18cd7446b9d08c69b116d8c00a0bffc6b6ea6d715dfc969298708d5a3"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-python-with-claude-code/COURSE_cn.md",
           "title": "用 Claude Code 实战 Python",
           "summary": "一门由 Agent 授课的课程：从下载课程文件夹到交付一个经过测试与验证的 Python 报表工具——包括任务契约、最小变更和客观的通过/失败证据。",
-          "sha256": "96c3287051153c42678be558538b9be16cc9835296fc8947711e48ea6ee0a145"
+          "sha256": "185e21a796cac870969f2fff73b3f103eb4a43e215c11be9f0044dc3ec0e7e22"
         }
       ]
     },
@@ -326,7 +326,7 @@
     {
       "id": "course-codex-cli",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
       "reviewed_on": "2026-09-12",
       "locales": [
@@ -335,14 +335,14 @@
           "path": "courses/hands-on-with-openai-codex-cli/COURSE.md",
           "title": "Hands-on with OpenAI Codex CLI",
           "summary": "The same verified Python workflow as the Claude Code course — task contract, bounded change, objective verify.py evidence — taught hands-on with the OpenAI Codex CLI instead.",
-          "sha256": "aa223ff4356ab25c32f55344362a5133fcba0f25851e05c6bd3c6bde9189a8aa"
+          "sha256": "a0dfd154f544fee2eedfc5a34546286af344afd7e6901abef6dec9ba0967fb76"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-openai-codex-cli/COURSE_cn.md",
           "title": "OpenAI Codex CLI 实战",
           "summary": "与 Claude Code 课程相同的已验证 Python 工作流——任务契约、最小变更、客观 verify.py 证据——改用 OpenAI Codex CLI 完成实战。",
-          "sha256": "4a31ae97c205ee1e28008f1149aadf1488d4d305176678da1c475475174944d5"
+          "sha256": "058985bd5e3f274df28de5ab12ba400eb3ea1367be7daee25a3b98424d4656b3"
         }
       ]
     },
@@ -464,7 +464,7 @@
     {
       "id": "course-mcp-tools",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
       "reviewed_on": "2026-09-12",
       "locales": [
@@ -473,14 +473,14 @@
           "path": "courses/mcp-server-in-python/COURSE.md",
           "title": "Give your agent tools with MCP (Python)",
           "summary": "Build a stateless Model Context Protocol tool server in pure Python — JSON-RPC 2.0 dispatch, schema validation, error isolation, and the 2026-07-28 input_required round-trip — and learn where a real tool belongs.",
-          "sha256": "bab5f79922a15ac52c736a549bc69a392718fff274e20cae0ad7c3428e00c4f6"
+          "sha256": "7cf318f04fd92925789d11cff48afc249fbe4f96b02e68bfa30fe054f0b6da22"
         },
         {
           "lang": "zh-CN",
           "path": "courses/mcp-server-in-python/COURSE_cn.md",
           "title": "用 MCP 给你的 Agent 装上工具（Python）",
           "summary": "用纯 Python 构建一个无状态的 Model Context Protocol 工具服务——JSON-RPC 2.0 分发、schema 校验、错误隔离与 2026-07-28 的 input_required 多轮交互——并理解真正的工具该放在哪里。",
-          "sha256": "a11236fcd046e9e84e54b22ebcce7e01b925ef71f12014ebb1f1b8bcb536cb63"
+          "sha256": "74af520640128e8df445f5e7af6f8391eb525af26698871b560fd98a6816961e"
         }
       ]
     },
@@ -602,7 +602,7 @@
     {
       "id": "course-verify-ship",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
       "reviewed_on": "2026-09-12",
       "locales": [
@@ -611,14 +611,14 @@
           "path": "courses/verifying-ai-generated-code/COURSE.md",
           "title": "From \"it runs\" to \"it ships\": verifying AI-generated code",
           "summary": "Build the release-evidence machine your AI-written project is missing — a ship check that runs the tests, parses what actually ran, refuses zero-test projects, and writes an honest delivery record.",
-          "sha256": "7765ea8ad032cc16eb5d34b0f65401c28c8c56cc1f44c496c9cc298f44cb7cd3"
+          "sha256": "d4f2b0448f3c637acfdff97e76ab72e622833f4904376d0fad4e54dbe189ef23"
         },
         {
           "lang": "zh-CN",
           "path": "courses/verifying-ai-generated-code/COURSE_cn.md",
           "title": "从「能跑」到「能上线」：验证 AI 写的代码",
           "summary": "为你的 AI 项目补上缺失的发布证据机器——一个 ship check：运行测试、解析实际跑了什么、拒绝零测试项目，并写出诚实的交付记录。",
-          "sha256": "55eda6add807fff2147c7829da190e8c7cdfdbb537d3dcfdb85b461e2c0a21f2"
+          "sha256": "50b2624cdae9a7597b841ec8f70339d928b431ceff4638e9c3e1e67d90a06188"
         }
       ]
     },

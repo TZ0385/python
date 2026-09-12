@@ -4,7 +4,7 @@ type: course
 title: 用 MCP 给你的 Agent 装上工具（Python）
 summary: 用纯 Python 构建一个无状态的 Model Context Protocol 工具服务——JSON-RPC 2.0 分发、schema 校验、错误隔离与 2026-07-28 的 input_required 多轮交互——并理解真正的工具该放在哪里。
 lang: zh-CN
-content_version: 1
+content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
 ---
@@ -54,7 +54,16 @@ reviewed_on: 2026-09-12
 纯 JSON-RPC 字典之外的传输层（stdio/HTTP 接线）、部署、客户端配置。
 仓库的 MCP 迁移指南覆盖把既有服务迁移到 2026-07-28 规范。
 
+
+## 徽章契约
+
+- 徽章：**MCP 工具服务徽章**（徽章 id `course-mcp-tools`）——认领全部五个检查点后获得。
+- 挑战：L01–L05 检查点各 10 分；五项全部在 flypython.com 认领后另加 50 分课程徽章奖励。
+- 证据：`python verify.py progress` —— L03（校验与错误隔离）与 L04（多轮交互）由测试套件客观判定；L01/L02/L05 为学习者自报。
+- 提交：每个通过的检查点会打印确定性认领码，在 flypython.com 上记入你的账号。这是自我报告的证据，绝不是证书。
+
 ## 文件夹结构
+
 
 `COURSE.md`/`COURSE_cn.md`、双语 `lessons/`、`scenario/requests/`
 线路样本、`TASK.md`/`TASK_cn.md`（完整服务契约）、`starter/`、

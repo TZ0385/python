@@ -116,11 +116,17 @@
 
 ## 5. TODO（全部未验证）
 
-- [ ] FP-411 全部五门课程的认领码子命令，推导方式已文档化。
-- [ ] FP-412 徽章契约 + 挑战叙事，中英一次变更交付。
+- [x] FP-411 全部五门课程的认领码子命令，推导方式已文档化。（本地
+  2026-09-12：`verify.py progress` 上线——l03/l04 由测试套件客观判定、
+  l01/l02/l05 自报；认领码 8 位 base32，确定性两次运行一致）
+- [x] FP-412 徽章契约 + 挑战叙事，中英一次变更交付。（本地
+  2026-09-12：五门课程 COURSE.md/COURSE_cn.md 增加徽章契约章节并升
+  content_version 2，manifest 已重生成）
 - [ ] FP-413 供网站渲染的结构化徽章元数据。
 - [ ] FP-414 SKILL.md 打包评估，附书面记录。
-- [ ] FP-415 `verify_courses.py` 认领码覆盖进 CI。
+- [x] FP-415 `verify_courses.py` 认领码覆盖进 CI。（本地 2026-09-12：
+  进度契约检查——双运行确定性、JSON 结构、5 检查点、码格式——已入
+  验证器并随 `make check`/validate.yml 执行）
 - [ ] FP-416 DA 路线三门新课（`da-eda`、`da-visualization`、
       `da-report`），中英 + verify.py 双向验证。
 - [ ] FP-417 `paths/data-analysis/` 路线契约 + 综合项目挑战。

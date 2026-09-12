@@ -4,7 +4,7 @@ type: course
 title: Agent 规则的单一真源
 summary: 不再同时维护彼此打架的 AGENTS.md、CLAUDE.md 与 .cursorrules——亲手构建一个能证明仓库只有一处规则真源的检查器，由你的编码 Agent 授课。
 lang: zh-CN
-content_version: 1
+content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
 ---
@@ -53,7 +53,16 @@ reviewed_on: 2026-09-12
 flypython.com 上的 AGENTS.md 指南）、多仓库配置、机器策略强制。检查器
 刻意收窄：一个目录、三个文件名、一个真源。
 
+
+## 徽章契约
+
+- 徽章：**量化漂移徽章**（徽章 id `course-agent-rules`）——认领全部五个检查点后获得。
+- 挑战：L01–L05 检查点各 10 分；五项全部在 flypython.com 认领后另加 50 分课程徽章奖励。
+- 证据：`python verify.py progress` —— L03（边界修改）与 L04（验证与审查）由测试套件客观判定；L01/L02/L05 为学习者自报。
+- 提交：每个通过的检查点会打印确定性认领码，在 flypython.com 上记入你的账号。这是自我报告的证据，绝不是证书。
+
 ## 文件夹结构
+
 
 `COURSE.md`/`COURSE_cn.md`、双语 `lessons/`、`scenario/` 仓库、
 `TASK.md`/`TASK_cn.md`（代码契约）、`starter/`、`solution/`、`tests/`
