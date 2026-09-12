@@ -7,6 +7,12 @@ lang: en-US
 content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
+badge:
+  id: course-agent-rules
+  name_en: Measure the drift
+  name_zh: 规则漂移检测
+  requires: All five checkpoints claimed (L01–L05)
+course_id: course-agent-rules
 ---
 
 # One source of truth for agent rules

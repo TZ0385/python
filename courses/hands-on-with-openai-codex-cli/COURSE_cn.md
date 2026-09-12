@@ -7,6 +7,12 @@ lang: zh-CN
 content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
+badge:
+  id: course-codex-cli
+  name_en: Reproduce with Codex in the loop
+  name_zh: Codex 协同复现
+  requires: 全部五个检查点认领通过（L01–L05）
+course_id: course-codex-cli
 ---
 
 # OpenAI Codex CLI 实战

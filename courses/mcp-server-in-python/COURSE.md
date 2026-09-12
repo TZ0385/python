@@ -7,6 +7,12 @@ lang: en-US
 content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
+badge:
+  id: course-mcp-tools
+  name_en: MCP Tool Server
+  name_zh: MCP 工具服务器
+  requires: All five checkpoints claimed (L01–L05)
+course_id: course-mcp-tools
 ---
 
 # Give your agent tools with MCP (Python)

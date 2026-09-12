@@ -7,6 +7,12 @@ lang: zh-CN
 content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
+badge:
+  id: course-verify-ship
+  name_en: It runs is not evidence
+  name_zh: 能跑不是证据
+  requires: 全部五个检查点认领通过（L01–L05）
+course_id: course-verify-ship
 ---
 
 # 从「能跑」到「能上线」：验证 AI 写的代码

@@ -59,14 +59,14 @@
           "path": "courses/agent-rules-single-source/COURSE.md",
           "title": "One source of truth for agent rules",
           "summary": "Stop maintaining diverging AGENTS.md, CLAUDE.md, and .cursorrules files — build a checker that proves your repository has exactly one rule source, taught hands-on with your coding agent.",
-          "sha256": "b09497cd76bea0191c3944dec61cc9bb89f245a21750fcf5013f4c4d4db7d51c"
+          "sha256": "d7dd7ed26db699c576046c2e103d6d94a2299805dca0d6b6153a4d6ccafcba6e"
         },
         {
           "lang": "zh-CN",
           "path": "courses/agent-rules-single-source/COURSE_cn.md",
           "title": "Agent 规则的单一真源",
           "summary": "不再同时维护彼此打架的 AGENTS.md、CLAUDE.md 与 .cursorrules——亲手构建一个能证明仓库只有一处规则真源的检查器，由你的编码 Agent 授课。",
-          "sha256": "245fc0cc40f3103ed5fed99f6f656e9b04ff7093bd0d0782203a0dbafa647864"
+          "sha256": "bf81ca5856328e1ef4f204707ad002f49704486ab2589d3b52cf366285e8222f"
         }
       ]
     },
@@ -197,14 +197,14 @@
           "path": "courses/hands-on-python-with-claude-code/COURSE.md",
           "title": "Hands-on Python with Claude Code",
           "summary": "An agent-taught course that takes you from a cloned folder to a tested, verified Python report tool using Claude Code — including the task contract, the bounded change, and the objective pass/fail evidence.",
-          "sha256": "aec892c18cd7446b9d08c69b116d8c00a0bffc6b6ea6d715dfc969298708d5a3"
+          "sha256": "50165b3b9aa9979d565ab34057977b7b7264cec739be1900ec3988876731c132"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-python-with-claude-code/COURSE_cn.md",
           "title": "用 Claude Code 实战 Python",
           "summary": "一门由 Agent 授课的课程：从下载课程文件夹到交付一个经过测试与验证的 Python 报表工具——包括任务契约、最小变更和客观的通过/失败证据。",
-          "sha256": "185e21a796cac870969f2fff73b3f103eb4a43e215c11be9f0044dc3ec0e7e22"
+          "sha256": "8c73c31d5901ff9bbe9e79e97342688b6737657ab05f1b71a767125ca398e2d3"
         }
       ]
     },
@@ -335,14 +335,14 @@
           "path": "courses/hands-on-with-openai-codex-cli/COURSE.md",
           "title": "Hands-on with OpenAI Codex CLI",
           "summary": "The same verified Python workflow as the Claude Code course — task contract, bounded change, objective verify.py evidence — taught hands-on with the OpenAI Codex CLI instead.",
-          "sha256": "a0dfd154f544fee2eedfc5a34546286af344afd7e6901abef6dec9ba0967fb76"
+          "sha256": "48e81f530f58ef69fe92e6312b08f01b4661f311cf07371809ce206e2eecd474"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-openai-codex-cli/COURSE_cn.md",
           "title": "OpenAI Codex CLI 实战",
           "summary": "与 Claude Code 课程相同的已验证 Python 工作流——任务契约、最小变更、客观 verify.py 证据——改用 OpenAI Codex CLI 完成实战。",
-          "sha256": "058985bd5e3f274df28de5ab12ba400eb3ea1367be7daee25a3b98424d4656b3"
+          "sha256": "bbdf5d8a71d8243f1cb7a3c30d2aa4ddb656cb932d36aaae3d543e3b5f7ea3c2"
         }
       ]
     },
@@ -462,6 +462,75 @@
       ]
     },
     {
+      "id": "course-da-eda",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/da-eda/COURSE.md",
+          "title": "Exploratory Data Analysis with an Agent",
+          "summary": "A challenge course — point your agent at a messy shop export and produce a verified EDA summary (results.json) whose numbers are checked against ground truth. First non-stdlib course in the catalog; pandas is managed with uv.",
+          "sha256": "3d5a7d05b6b48a667eeca51f7c6232e95c231d7cb4f78d3826de02c6a0a55b85"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/da-eda/COURSE_cn.md",
+          "title": "用 Agent 做探索性数据分析",
+          "summary": "挑战式课程——让你的 Agent 处理一份脏的商店导出数据，产出一份经过真值校验的 EDA 摘要（results.json）。目录中第一门非标准库课程；pandas 由 uv 管理。",
+          "sha256": "ef5272a728fc540f4bedb3c650a1789d50a32cc90883aacd3202ba10360b4f00"
+        }
+      ]
+    },
+    {
+      "id": "course-da-report",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/da-report/COURSE.md",
+          "title": "From Analysis to Report with an Agent",
+          "summary": "Challenge course — turn a verified EDA summary into a structured report (report.json + report.md) where every number traces back to its input. Verification checks structure and number consistency, not writing quality.",
+          "sha256": "d2b978ad0e561b90734d747c4551cda91dddf8619e4d388799b67a4b59344496"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/da-report/COURSE_cn.md",
+          "title": "用 Agent 从分析到报告",
+          "summary": "挑战课程——把经过验证的 EDA 摘要变成结构化报告（report.json + report.md），其中每个数字都可回溯到输入。验证检查结构与数字一致性，不评价文笔。",
+          "sha256": "c825ca0039fd828e4133a1a14956907a7cf8a74ff0c2e736f387c16fd26723e7"
+        }
+      ]
+    },
+    {
+      "id": "course-da-visualization",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/da-visualization/COURSE.md",
+          "title": "Data Visualization with an Agent",
+          "summary": "Challenge course — turn a clean sales dataset into three spec'd charts plus a summary.json whose numbers are verified against the data. Charts must be generated from data, never hardcoded.",
+          "sha256": "950c213e5093c415a6a78988fa7bb1c0056fd23b2d27225a762b977a70af3a5f"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/da-visualization/COURSE_cn.md",
+          "title": "用 Agent 做数据可视化",
+          "summary": "挑战课程——把干净的销售数据变成三张有规格的图和一份 summary.json，其中数字会与数据集校验。图必须由数据生成，不许硬编码。",
+          "sha256": "6c614cb91314a2b75b51e677d50a6d214355047eeb48def66fa0fc3105c3a690"
+        }
+      ]
+    },
+    {
       "id": "course-mcp-tools",
       "type": "course",
       "content_version": 2,
@@ -473,14 +542,14 @@
           "path": "courses/mcp-server-in-python/COURSE.md",
           "title": "Give your agent tools with MCP (Python)",
           "summary": "Build a stateless Model Context Protocol tool server in pure Python — JSON-RPC 2.0 dispatch, schema validation, error isolation, and the 2026-07-28 input_required round-trip — and learn where a real tool belongs.",
-          "sha256": "7cf318f04fd92925789d11cff48afc249fbe4f96b02e68bfa30fe054f0b6da22"
+          "sha256": "de677071dab7c06244ad0634a7266372619af38a8de60b8257af0570de1b9cb4"
         },
         {
           "lang": "zh-CN",
           "path": "courses/mcp-server-in-python/COURSE_cn.md",
           "title": "用 MCP 给你的 Agent 装上工具（Python）",
           "summary": "用纯 Python 构建一个无状态的 Model Context Protocol 工具服务——JSON-RPC 2.0 分发、schema 校验、错误隔离与 2026-07-28 的 input_required 多轮交互——并理解真正的工具该放在哪里。",
-          "sha256": "74af520640128e8df445f5e7af6f8391eb525af26698871b560fd98a6816961e"
+          "sha256": "d125779e096e3b76b97caf51db25577869ee9fadd23447e02f9aea1d5d5066ee"
         }
       ]
     },
@@ -611,14 +680,14 @@
           "path": "courses/verifying-ai-generated-code/COURSE.md",
           "title": "From \"it runs\" to \"it ships\": verifying AI-generated code",
           "summary": "Build the release-evidence machine your AI-written project is missing — a ship check that runs the tests, parses what actually ran, refuses zero-test projects, and writes an honest delivery record.",
-          "sha256": "d4f2b0448f3c637acfdff97e76ab72e622833f4904376d0fad4e54dbe189ef23"
+          "sha256": "88b1a775241a69b11b868bfae72e2954ad93b608789a9230a46431549444e9ed"
         },
         {
           "lang": "zh-CN",
           "path": "courses/verifying-ai-generated-code/COURSE_cn.md",
           "title": "从「能跑」到「能上线」：验证 AI 写的代码",
           "summary": "为你的 AI 项目补上缺失的发布证据机器——一个 ship check：运行测试、解析实际跑了什么、拒绝零测试项目，并写出诚实的交付记录。",
-          "sha256": "50b2624cdae9a7597b841ec8f70339d928b431ceff4638e9c3e1e67d90a06188"
+          "sha256": "fe2cc54cd9e37ddebb2c80c2cba52f40f5ce272566fd818c448b97e80c03c8ba"
         }
       ]
     },
@@ -895,6 +964,75 @@
           "title": "将 Python MCP 服务端迁移到 2026-07-28 规范",
           "summary": "面向 2026-07-28 无状态规范更新 Python MCP 服务端，移除 initialize 握手、采用 input_required 多轮交互、放弃废弃特性并强化授权。",
           "sha256": "cc5360996f1d45cd8155dd1a0cd7a6c418d988247c54ba31ca0d5efaa1e81c8f"
+        }
+      ]
+    },
+    {
+      "id": "path-da-capstone",
+      "type": "path",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "paths/data-analysis/modules/capstone.md",
+          "title": "Capstone: verified analysis of a real dataset",
+          "summary": "Data Analysis path capstone — end-to-end clean, explore, and report on orders.csv with verify.py checking the numbers.",
+          "sha256": "814507300283d9c7c27409138e35ebc57ab85dcc04a1f468e11b486783b580f1"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "paths/data-analysis/modules/capstone_cn.md",
+          "title": "综合项目：真实数据集的验证分析",
+          "summary": "数据分析路线综合项目——在 orders.csv 上端到端完成清洗、探索与报告，verify.py 校验数字。",
+          "sha256": "5f2af0b8b6c384e5fd430e603df573bee3c8cdfb564c500ad7d733d813b4778e"
+        }
+      ]
+    },
+    {
+      "id": "path-foundation-challenge",
+      "type": "path",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "paths/foundation/modules/route-challenge.md",
+          "title": "Route challenge: dual-agent, double-verified",
+          "summary": "Foundation path capstone — run the same task through Claude Code and Codex CLI and verify both outputs yourself.",
+          "sha256": "12390205b366d179afd34fc60fc557ed3aca53d10f6474a73d922b2cbbf3045a"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "paths/foundation/modules/route-challenge_cn.md",
+          "title": "路线挑战：双 Agent、双重验证",
+          "summary": "基础路线收官挑战——同一任务分别用 Claude Code 与 Codex CLI 完成并亲手双重验证。",
+          "sha256": "86add318cc3094155f0a3f05eb05947d351af312c7f78f777f290be953cf27ab"
+        }
+      ]
+    },
+    {
+      "id": "path-foundation-m0",
+      "type": "path",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-12",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "paths/foundation/modules/m0-orientation.md",
+          "title": "The agent tool landscape",
+          "summary": "Foundation path module 0 — orientation on Claude Code, Codex CLI, and Cursor; install one agent and observe its evidence habits.",
+          "sha256": "2c40a01bff3ab9cf40c6f453201a381d4a4d02ebc7246af46984b2548496f40f"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "paths/foundation/modules/m0-orientation_cn.md",
+          "title": "Agent 工具生态总览",
+          "summary": "基础路线模块 0——Claude Code、Codex CLI、Cursor 生态导览；装一个 Agent 并观察它的证据习惯。",
+          "sha256": "4d6b4ecbc2eb0d0ef5c2e9522466f0c9ace056bd4ad8db4a9e116aa5916e64bb"
         }
       ]
     },

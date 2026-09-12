@@ -7,6 +7,12 @@ lang: en-US
 content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
+badge:
+  id: course-verify-ship
+  name_en: It runs is not evidence
+  name_zh: 能跑不是证据
+  requires: All five checkpoints claimed (L01–L05)
+course_id: course-verify-ship
 ---
 
 # From "it runs" to "it ships": verifying AI-generated code

@@ -7,6 +7,12 @@ lang: zh-CN
 content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
+badge:
+  id: course-claude-code
+  name_en: Reproduce the failure
+  name_zh: 复现故障
+  requires: 全部五个检查点认领通过（L01–L05）
+course_id: course-claude-code
 ---
 
 # 用 Claude Code 实战 Python

@@ -7,6 +7,12 @@ lang: en-US
 content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
+badge:
+  id: course-claude-code
+  name_en: Reproduce the failure
+  name_zh: 复现故障
+  requires: All five checkpoints claimed (L01–L05)
+course_id: course-claude-code
 ---
 
 # Hands-on Python with Claude Code

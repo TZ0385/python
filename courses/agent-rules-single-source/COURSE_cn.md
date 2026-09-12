@@ -7,6 +7,12 @@ lang: zh-CN
 content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
+badge:
+  id: course-agent-rules
+  name_en: Measure the drift
+  name_zh: 规则漂移检测
+  requires: 全部五个检查点认领通过（L01–L05）
+course_id: course-agent-rules
 ---
 
 # Agent 规则的单一真源

@@ -7,6 +7,12 @@ lang: en-US
 content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
+badge:
+  id: course-codex-cli
+  name_en: Reproduce with Codex in the loop
+  name_zh: Codex 协同复现
+  requires: All five checkpoints claimed (L01–L05)
+course_id: course-codex-cli
 ---
 
 # Hands-on with OpenAI Codex CLI

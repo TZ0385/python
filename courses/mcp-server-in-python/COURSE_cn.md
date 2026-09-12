@@ -7,6 +7,12 @@ lang: zh-CN
 content_version: 2
 status: reviewed
 reviewed_on: 2026-09-12
+badge:
+  id: course-mcp-tools
+  name_en: MCP Tool Server
+  name_zh: MCP 工具服务器
+  requires: 全部五个检查点认领通过（L01–L05）
+course_id: course-mcp-tools
 ---
 
 # 用 MCP 给你的 Agent 装上工具（Python）
