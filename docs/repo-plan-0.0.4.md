@@ -1,109 +1,93 @@
-# FlyPython repository 0.0.4 update plan
+# FlyPython 仓库 0.0.4 更新计划
 
-Version: 0.0.4 (planning draft, revision 2)
-Updated: 2026-09-12 (rev 2 — supersedes the same-day local-first draft)
-Chinese version: [repo-plan-0.0.4_cn.md](./repo-plan-0.0.4_cn.md)
-Related: flypython.com `docs/product-and-growth-plan-0.0.4.md`
+版本：0.0.4（规划草稿，第 2 版）
+更新日期：2026-09-12（第 2 版——同日取代"本地优先"初稿）
+关联：flypython.com `docs/product-and-growth-plan-0.0.4.md`
 
-Status: planning document only. Nothing here is implemented. The repository
-boundary from `AGENTS.md` holds: this repo owns reviewed content, runnable
-evidence, and stable JSON contracts; the website owns presentation,
-accounts, and conversion. All new content ships English and Chinese in sync.
+状态：仅规划文档。本文件所述内容均未实现。`AGENTS.md` 的仓库边界不变：
+本仓库拥有经审核的内容、可运行的证据与稳定的 JSON 契约；网站拥有呈现、
+账号体系与转化。所有新内容中英同一次变更交付。
 
-Revision note: the first 0.0.4 draft proposed local-only progress artifacts
-(`PROGRESS.json`, `BADGE.md`). The owner moved the 0.0.4 core to accounts,
-server-recorded progress, and a leaderboard (Cloudflare D1 + Workers). This
-revision refocuses the repo work on what the website needs from course
-folders: **deterministic checkpoint claim codes** and the challenge
-narrative. Local artifacts are dropped; the claim code is the contract.
+修订说明：0.0.4 首稿提出纯本地的进度产物（`PROGRESS.json`、`BADGE.md`）。
+所有者已将 0.0.4 核心转向账号体系、服务端记录的进度与排行榜
+（Cloudflare D1 + Workers）。本版据此重新聚焦仓库工作——网站需要课程
+文件夹提供什么：**确定性的检查点认领码**与挑战叙事。本地产物取消，
+认领码即契约。
 
-## 1. Theme: checkpoint claim codes for server-recorded progress
+## 1. 主题：面向服务端进度记录的检查点认领码
 
-The website records progress when a learner enters a claim code printed by
-`verify.py` after a checkpoint's suite passes. This repo owns everything
-that makes those codes trustworthy and stable:
+学习者在检查点套件通过后，把 `verify.py` 打印的认领码输入网站，网站
+即记录进度。本仓库拥有让这些码可信且稳定的一切：
 
-- The code derives deterministically from `(course_id, checkpoint_id,
-  evidence)` where evidence is the objective suite outcome — the same
-  inputs always produce the same code, on any machine, offline.
-- Codes are short and human-enterable (e.g. 8 chars of base32).
-- Codes are spot-checkable, not tamper-proof; the framing everywhere is
-  "self-reported evidence", never certification.
-- No network access, no accounts, no telemetry in course tooling — the
-  website side owns everything behind login.
+- 认领码由 `(course_id, checkpoint_id, evidence)` 确定性推导，其中
+  evidence 是客观套件的结果——相同输入在任何机器、离线状态下都产生
+  相同的码。
+- 认领码短小、可人工输入（如 base32 的 8 个字符）。
+- 认领码可抽查、并非防篡改；所有表述统一为"自我报告的证据"，绝不
+  使用认证式措辞。
+- 课程工具中无网络访问、无账号、无遥测——登录后的一切都归网站侧。
 
-## 2. Work items
+## 2. 工作项
 
-### FP-411 Checkpoint claim codes (`verify.py`)
+### FP-411 检查点认领码（`verify.py`）
 
-- New subcommand: `python verify.py progress` prints, per checkpoint, its
-  id, name, pass state (derived from the objective suite), and — when
-  passed — its claim code.
-- Codes are stable across runs and platforms; the derivation (including
-  any per-course salt constant) is documented in the course contract and
-  reviewed like code.
-- Stdlib only; deterministic output; safe to re-run.
+- 新子命令：`python verify.py progress` 按检查点打印其 id、名称、通过
+  状态（来自客观套件），以及——通过时——认领码。
+- 认领码跨运行、跨平台稳定；推导方式（含每课程盐值常量）在课程契约
+  中文档化，并像代码一样接受审核。
+- 仅用标准库；输出确定；可安全重复运行。
 
-### FP-412 Challenge narrative (COURSE.md + lessons)
+### FP-412 挑战叙事（COURSE.md + 课程）
 
-- COURSE.md gains the badge contract section: course badge name (e.g.
-  "Verified Report Tool"), the five checkpoint challenges, and the honest
-  self-reported-evidence framing — now pointing at the website's recording
-  flow.
-- Lessons are labeled as challenges ("Challenge 01: reproduce the
-  failure"); checkpoint sections name the badge requirement they satisfy
-  and the claim step.
-- EN+ZH in the same commit; `reviewed_on` and `content_version` bumped per
-  manifest rules.
+- COURSE.md 增加徽章契约章节：课程徽章名（如"Verified Report Tool"）、
+  五个检查点挑战、"自我报告证据"的诚实表述——并指向网站的记录流程。
+- 课程标注为挑战（"挑战 01：复现故障"）；检查点小节写明其满足的徽章
+  要求与认领步骤。
+- 中英同一次提交；按 manifest 规则更新 `reviewed_on` 与
+  `content_version`。
 
-### FP-413 Badge contract alignment
+### FP-413 徽章契约对齐
 
-- Each course's `COURSE.md` declares its badge metadata as structured
-  front matter/fields (badge id, display name EN+ZH, requirement text) so
-  the website can render badge maps and server records from course data —
-  no hand-copied badge definitions on the site side.
+- 每门课程的 `COURSE.md` 以结构化 front matter/字段声明徽章元数据
+  （徽章 id、展示名中英、要求文本），让网站从课程数据渲染徽章地图与
+  服务端记录——网站侧不手抄任何徽章定义。
 
-### FP-414 Agent-skill packaging (evaluation)
+### FP-414 Agent skill 打包（评估）
 
-- Evaluate publishing course ingestion as a SKILL.md-compatible skill
-  (OpenMAIC / Codex workbenches), following the repository's template
-  conventions. Human-authored; pilot recorded honestly before any
-  recommendation.
+- 评估把课程摄取发布为 SKILL.md 兼容的 skill（OpenMAIC / Codex 工作
+  台），遵循仓库模板约定。人工撰写；先留下真实试点记录再给建议。
 
-### FP-415 `verify_courses.py` extension
+### FP-415 `verify_courses.py` 扩展
 
-- Extend the course-contract verifier: every checkpoint exposes a claim
-  code; codes are deterministic (same inputs → same code across two runs
-  and two platforms); format is validated; the progress subcommand is
-  exercised in CI.
+- 扩展课程契约验证器：每个检查点都暴露认领码；认领码确定性成立
+  （相同输入在两次运行、两个平台上产生相同码）；格式经过校验；
+  进度子命令纳入 CI 演练。
 
 ## 3. Non-goals
 
-No accounts, no server-side judging in this repo, no network access from
-course tooling, no certification language, no second copy of site content.
-Anti-fraud design stays deliberately light (spot-checkable codes); heavy
-anti-fraud is the website's concern and is out of scope here.
+本仓库无账号、无服务端判题、课程工具无网络访问、无认证式措辞、无
+网站内容第二副本。反作弊设计刻意保持轻量（可抽查的码）；重反作弊是
+网站侧的关切，不在本仓库范围。
 
-## 4. TODO (all unverified)
+## 4. TODO（全部未验证）
 
-- [ ] FP-411 claim-code subcommand, all five courses, documented derivation.
-- [ ] FP-412 badge contract + challenge narrative, EN+ZH, one change.
-- [ ] FP-413 structured badge metadata for site rendering.
-- [ ] FP-414 SKILL.md packaging evaluation with a written record.
-- [ ] FP-415 `verify_courses.py` claim-code coverage in CI.
+- [ ] FP-411 全部五门课程的认领码子命令，推导方式已文档化。
+- [ ] FP-412 徽章契约 + 挑战叙事，中英一次变更交付。
+- [ ] FP-413 供网站渲染的结构化徽章元数据。
+- [ ] FP-414 SKILL.md 打包评估，附书面记录。
+- [ ] FP-415 `verify_courses.py` 认领码覆盖进 CI。
 
-## 5. Execution order
+## 5. 执行顺序
 
-1. FP-411 + FP-412 + FP-415 in one change (codes, narrative, checker),
-   paired with the website's FP-401/FP-402 groundwork.
-2. FP-413 once the website badge rendering shape is fixed.
-3. FP-414 after one real external-tool run is recorded.
+1. FP-411 + FP-412 + FP-415 一次变更完成（码、叙事、检查器），与网站
+   FP-401/FP-402 groundwork 配对推进。
+2. 网站徽章渲染形状确定后做 FP-413。
+3. 记录一次真实外部工具运行后再做 FP-414。
 
-## 6. Carried forward from 0.0.3 (open)
+## 6. 自 0.0.3 结转（未完成）
 
-- FP-326 note: five agent-taught run-throughs still to be recorded in each
-  course's `REVIEW.md` (launch evidence, not a content blocker).
-- FP-327 release step: website pin bump to this repo's release SHA in one
-  deliberate step.
-- FP-334 repo description/topics + first GitHub Release; CHANGELOG
-  `[Unreleased]` cuts into a version section at that Release.
+- FP-326 备注：五次 Agent 实机授课记录仍待写入各课程 `REVIEW.md`
+  （属于发布证据，不是内容阻塞项）。
+- FP-327 发布步骤：网站 pin 在一次刻意变更中固定到本仓库发布 SHA。
+- FP-334 仓库描述/话题 + 首个 GitHub Release；该 Release 时将
+  CHANGELOG `[Unreleased]` 切为正式版本小节。

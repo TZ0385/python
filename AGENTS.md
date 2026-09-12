@@ -25,8 +25,10 @@ reviewed catalog data, and stable public JSON contracts.
   review date, and factual meaning. All content (guides, playbooks, examples,
   courses, radar entries) ships EN+ZH in the same change.
 - Governance documents (`AGENTS.md`, `CONTRIBUTING.md`, `docs/CONSUMING.md`,
-  `docs/CURATION_POLICY.md`, `docs/REPO_TO_WEBSITE.md`, plans) are
-  English-canonical; a `_cn` companion may exist but the English text governs.
+  `docs/CURATION_POLICY.md`, `docs/REPO_TO_WEBSITE.md`) are
+  English-canonical. Version plans (`docs/repo-plan-*.md`) are maintained
+  in Chinese by owner decision (2026-09-12); their English history stays
+  in git.
 - Add first-party guides, playbooks, and courses to `content-manifest.json`;
   keep each locale pair aligned and verify its source checksum.
 - Courses live one folder per course under `courses/<slug>/` and are taught by
